@@ -1,0 +1,158 @@
+emd_150 Muhak-dong
+emd_165 Namyeong-dong
+emd_190 Itaewon-dong
+emd_197 Sangwangsimni-dong
+emd_200 Doseon-dong
+emd_215 Neung-dong
+emd_221 Sinseol-dong
+emd_226 Jangan-dong
+emd_300 Chungjeongno 2(i)-ga
+emd_305 Cheonyeon-dong
+emd_306 Okcheon-dong
+emd_311 Daehyeon-dong
+emd_312 Daesin-dong
+emd_313 Sinchon-dong
+emd_321 Gongdeok-dong
+emd_322 Singongdeok-dong
+emd_323 Dohwa-dong
+emd_327 Daeheung-dong
+emd_328 Yeomni-dong
+emd_330 Sinsu-dong
+emd_331 Hyeonseok-dong
+emd_332 Gusu-dong
+emd_334 Sangsu-dong
+emd_335 Hajung-dong
+emd_336 Sinjeong-dong
+emd_337 Dangin-dong
+emd_344 Jung-dong
+emd_361 Osoe-dong
+emd_364 Garibong-dong
+emd_368 Gung-dong
+emd_371 Hang-dong
+emd_457 Macheon-dong
+emd_469 Daechang-dong 2(i)-ga
+emd_484 Daecheong-dong 3(sam)-ga
+emd_495 Sinchang-dong 3(sam)-ga
+emd_504 Nampo-dong 3(sam)-ga
+emd_505 Nampo-dong 4(sa)-ga
+emd_512 Seodaesin-dong 2(i)-ga
+emd_534 Jwacheon-dong
+emd_535 Beomil-dong
+emd_539 Daepyeong-dong 2(i)-ga
+emd_557 Yangjeong-dong
+emd_614 Geumsa-dong
+emd_621 Jungnim-dong
+emd_622 Singman-dong
+emd_636 Nulcha-dong
+emd_648 Deokpo-dong
+emd_649 Gwaebeop-dong
+emd_650 Gamjeon-dong
+emd_668 Sangseo-dong
+emd_684 Yongdeok-dong
+emd_685 Sangdeok-dong
+emd_687 Dowon-dong
+emd_711 Bungnae-dong
+emd_837 Jang-dong
+emd_838 Janggi-dong
+emd_840 Jukjeon-dong
+emd_841 Gamsam-dong
+emd_845 Jincheon-dong
+emd_846 Yucheon-dong
+emd_849 Woram-dong
+emd_863 Jungang-dong 1(il)-ga
+emd_900 Bukseong-dong 1(il)-ga
+emd_915 Manseok-dong
+emd_916 Hwasu-dong
+emd_917 Songhyeon-dong
+emd_918 Hwapyeong-dong
+emd_919 Changyeong-dong
+emd_920 Geumgok-dong
+emd_922 Sungui-dong
+emd_928 Munhak-dong
+emd_930 Seonhak-dong
+emd_1072 Gu-dong
+emd_1074 Wolsan-dong
+emd_1084 Bangnim-dong
+emd_1105 Im-dong
+emd_1223 Hyo-dong
+emd_1224 Cheon-dong
+emd_1266 Eunhaeng-dong
+emd_1304 Gasuwon-dong
+emd_1433 Jangsaengpo-dong
+emd_1485 Daepyeong-dong
+emd_1497 Haemil-dong
+emd_1554 Godeung-dong
+emd_1555 Hwaseo-dong
+emd_1587 Yeosu-dong
+emd_1634 Yakdae-dong
+emd_1638 Sang-dong
+emd_1643 Songnae-dong
+emd_1668 Gajae-dong
+emd_1684 Sosa-dong
+emd_1685 Yongi-dong
+emd_1739 Pungdo-dong
+emd_1756 Goyang-dong
+emd_1870 Hasang-dong
+emd_1911 Sinjang-dong
+emd_1919 Gamil-dong
+emd_2032 Bongsan-dong
+emd_2113 Song-dong
+emd_2290 Won-dong
+emd_2344 Namhangjin-dong
+emd_2367 Hyoga-dong
+emd_2375 Chuam-dong
+emd_2384 Mukhojin-dong
+emd_2391 Simgok-dong
+emd_2415 Yeongnang-dong
+emd_2416 Dongmyeong-dong
+emd_2417 Jungang-dong
+emd_2518 Imnam-myeon
+emd_2585 Seonghwa-dong
+emd_2586 Gaesin-dong
+emd_2620 Seokso-dong
+emd_2801 Ssangyong-dong
+emd_2850 Wolmi-dong
+emd_2870 Gungchon-dong
+emd_3088 Taepyeong-dong
+emd_3116 Jinbuk-dong
+emd_3148 Gangheung-dong
+emd_3149 Dodeok-dong
+emd_3152 Yeoui-dong 2(i)-ga
+emd_3480 Yongdang-dong
+emd_3512 Daeui-dong 1(il)-ga
+emd_3517 Jungang-dong 3(sam)-ga
+emd_3526 Jung-dong 1(il)-ga
+emd_3527 Jung-dong 2(i)-ga
+emd_3541 Yuldo-dong
+emd_3570 Gyeongho-dong
+emd_3904 Songdo-dong
+emd_3937 Hanggu-dong
+emd_3948 Yeonam-dong
+emd_4012 Gamho-dong
+emd_4434 Buk-dong
+emd_4435 Jung-dong
+emd_4437 Sodap-dong
+emd_4442 Deokjeong-dong
+emd_4448 Bangye-dong
+emd_4464 Namsan-dong
+emd_4474 Wollim-dong
+emd_4475 Jeokhyeon-dong
+emd_4491 Namyang-dong
+emd_4492 Yongji-dong
+emd_4533 Woryeong-dong
+emd_4536 Odong-dong
+emd_4573 Dongsang-dong
+emd_4579 Taepyeong-dong
+emd_4581 Musong-dong
+emd_4583 Sungin-dong
+emd_4585 Nambin-dong
+emd_4592 Hoehyeon-dong
+emd_4618 Haengam-dong
+emd_4625 Yeondo-dong
+emd_4634 Cheongan-dong
+emd_4635 Angol-dong
+emd_4729 Mado-dong
+emd_4730 Neukdo-dong
+emd_4731 Sinsu-dong
+emd_4994 Samyang 3(sam)-dong
+emd_5025 Chuja-myeon
