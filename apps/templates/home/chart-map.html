@@ -1,0 +1,932 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} MadecaSSOL {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}
+
+<style>
+    form {
+	width: 500px;
+}
+table {
+	border-collapse:collapse;
+	margin-bottom: 10px;
+}
+th, td {
+	padding: 3px 2px;
+}
+.off-screen {
+	display: none;
+}
+#nav {
+	width: 500px;
+	text-align: center;
+    
+}
+#nav a {
+	display: inline-block;
+	padding: 3px 5px;
+	margin-right: 10px;
+	font-family:Tahoma;
+	background: #ccc;
+	color: #000;
+	text-decoration: none;
+}
+#nav a.active {
+	background: #333;
+	color: #fff;
+}
+#wrap .buttons .control-btn {
+    margin: 0 5px 5px 0;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+.control-btn {
+    margin: 0;
+    color: #555;
+    padding: 2px 6px;
+    background: #fff;
+    border: solid 1px #333;
+    cursor: pointer;
+    -webkit-border-radius: 5px;
+    outline: 0 none;
+    border-radius: 5px;
+
+}
+
+</style>
+
+{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="pcoded-main-container">
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="pcoded-wrapper">
+        <div class="pcoded-content">
+            <div class="pcoded-inner-content">
+                <div class="page-header">
+                    <div class="page-block">
+                        <div class="row align-items-center">
+                            <div class="col-md-12">
+                                <div class="page-header-title">
+                                    <h5 class="m-b-10">MadecaSSOl Map</h5>
+                                </div>
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                    <li id="region-name" class="breadcrumb-item"><a href="javascript:">부산광역시</a></li>
+                                    <li id="ssol-name" class="breadcrumb-item"><a href="javascript:">소나무재선충 한눈에 보기</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-body">
+                    <div class="page-wrapper">
+                        <!-- [ Main Content ] start -->
+                        <div class="row">
+
+                            <div class="col-xl-6" style="height:1070px; margin-bottom: 30px;">
+                                <div class="card" style="height:1070px;">
+                                    <div class="card-header">
+                                        <h5>소나무 지도로 한눈에 보기</h5>
+                                    </div>
+                                    <div class="card-block">
+                                        <div id="map" class="set-map" style="height:930px;">
+                                            <div class="buttons" style="z-index: 1000; position: absolute;">
+                                                <input id="to-reset" type="button" value="RESET" class="control-btn">
+                                                <input id="to-sigungu" type="button" value="이전 단계" class="control-btn">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>    
+                            <!-- [ Morris Chart ] start -->
+                            <div class="col-xl-6">
+                                <div class="card" style="display: flex; width: 100%;">
+                                    <div class="card-header">
+                                        <h5>소나무재선충 다발생 5개 지역</h5>
+                                    </div>
+                                    <div id="index-donut" class="card-block">
+                                        <div id="morris-donut-chart1" style="height:200px; flex: 1; width: 50%; float: left;"></div>
+                                        <div id="total-count" style="height:200px; flex: 1; width: 50%; float: right;"></div>
+                                    </div>                                    
+                                </div>
+                                <div class="card" style="height:300px">
+                                    <div class="card-header">
+                                        <h5>소나무재선충 시간별 발생 추이</h5>
+                                    </div>
+                                    <div id="index-curve" class="card-block">
+                                        <div id="morris-area-curved-chart" style="height:200px"></div>
+                                    </div>
+                                </div>
+                                <div class="card" style="height:300px">
+                                    <div class="card-header">
+                                        <h5>소나무재선충 반출 금지 구역</h5>
+                                    </div>
+                                    <div class="card-block" style="height:200px">
+                                        <table id="products" border="1">
+                                            <caption>
+                                                <form action="" id="setRows">
+                                                    <p>
+                                                        <input type="text" name="rowPerPage" value="3" style="display: none;">
+                                                    </p>
+                                                </form>
+                                        
+                                            </caption>
+                                        
+                                            <thead>
+                                                <tr style="background-color: #1de9b6;">
+                                                    <th>No</th>
+                                                    <th>반출 금지구역 지역번호</th>
+                                                    <th>이름</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="prohibit-table">
+                                            </tbody>
+                                        
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card" style="height:300px">
+                                    <div class="card-header">
+                                        <h5>소나무재선충 예측차트</h5>
+                                    </div>
+                                    <div id="index-prob" class="card-block">
+                                        <div id="total-prob" style="height:200px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% include "home/footer.html" %}
+
+{% endblock content %}
+
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script src="{{ config.ASSETS_ROOT }}/js/custom.js"></script>
+<script>
+
+var $setRows = $('#setRows');
+
+$setRows.submit(function (e) {
+	e.preventDefault();
+	var rowPerPage = $('[name="rowPerPage"]').val() * 1;// 1 을  곱하여 문자열을 숫자형로 변환
+
+//		console.log(typeof rowPerPage);
+
+	var zeroWarning = 'Sorry, but we cat\'t display "0" rows page. + \nPlease try again.'
+	if (!rowPerPage) {
+		alert(zeroWarning);
+		return;
+	}
+	$('#nav').remove();
+	var $products = $('#products');
+
+	$products.after('<div id="nav">');
+
+
+	var $tr = $($products).find('tbody tr');
+	var rowTotals = $tr.length;
+//	console.log(rowTotals);
+
+	var pageTotal = Math.ceil(rowTotals/ rowPerPage);
+	var i = 0;
+
+	for (let i=0; i < pageTotal; i++) {
+        if (i < 5){ 
+		$('<a href="#"></a>')
+				.attr('rel', i)
+				.html(i + 1)
+				.appendTo('#nav');
+        }
+        else{
+            if (i == pageTotal -2){
+                $('<a href="#"></a>')
+				.attr('rel', i)
+				.html(i + 1)
+				.appendTo('#nav');
+            } else if(i == pageTotal -1){
+                $('<a href="#"></a>')
+				.attr('rel', i)
+				.html(i + 1)
+				.appendTo('#nav');
+        }else if(i == pageTotal){
+                $('<a href="#"></a>')
+				.attr('rel', i)
+				.html(i + 1)
+				.appendTo('#nav');
+        }
+    }
+	}
+
+	$tr.addClass('off-screen')
+			.slice(0, rowPerPage)
+			.removeClass('off-screen');
+
+	var $pagingLink = $('#nav a');
+	$pagingLink.on('click', function (evt) {
+		evt.preventDefault();
+		var $this = $(this);
+		if ($this.hasClass('active')) {
+			return;
+		}
+		$pagingLink.removeClass('active');
+		$this.addClass('active');
+
+		// 0 => 0(0*4), 4(0*4+4)
+		// 1 => 4(1*4), 8(1*4+4)
+		// 2 => 8(2*4), 12(2*4+4)
+		// 시작 행 = 페이지 번호 * 페이지당 행수
+		// 끝 행 = 시작 행 + 페이지당 행수
+
+		var currPage = $this.attr('rel');
+		var startItem = currPage * rowPerPage;
+		var endItem = startItem + rowPerPage;
+
+		$tr.css('opacity', '0.0')
+				.addClass('off-screen')
+				.slice(startItem, endItem)
+				.removeClass('off-screen')
+				.animate({opacity: 1}, 300);
+
+	});
+
+	$pagingLink.filter(':first').addClass('active');
+
+
+});
+
+
+
+
+var zoom = 8;
+var type = -1;
+
+var holdFeature = 0; // 전에 있던 지역 시군구 -> 시군구 이동 시에는 시도 경계에서 이동해야 함, 작아지면 큰 지역 기억
+var holdSidoFeature = 0;
+var holdSidoName = 0; // 시도 이름
+var holdSigunguName = 0; // 시군구 이름
+
+var holdSidoBool = false; // 시도 체크
+var holdSigunguBool = false; // 시군구 체크
+var holdEmdBool = false; // 읍면동 체크
+
+var globalAmdCode = 0; // amd코드
+var sigunguCenter = 0; // 시군구 센터
+
+var tempdata = 0;
+
+var jejuC = new naver.maps.LatLng(33.3590628, 126.534361),
+    busanC = new naver.maps.LatLng(35.198362, 129.053922),
+    seoulC = new naver.maps.LatLng(37.540705, 126.956764),
+    gangwonC = new naver.maps.LatLng(37.555837, 128.209315),
+    gyeonggiC = new naver.maps.LatLng(37.567167, 127.190292),
+    gyeongnamC = new naver.maps.LatLng(35.259787, 128.664734),
+    gyeongbukC = new naver.maps.LatLng(36.248647, 128.664734),
+    gwangjuC = new naver.maps.LatLng(35.126033, 126.831302),
+    daeguC = new naver.maps.LatLng(35.798838, 128.583052),
+    daejeonC = new naver.maps.LatLng(36.321655, 127.378953),
+    sejongC = new naver.maps.LatLng(36.42829747263545, 126.76620435615891),
+    ulsanC = new naver.maps.LatLng(35.519301, 129.239078),
+    inchonC = new naver.maps.LatLng(37.469221, 126.573234),
+    jeonnamC = new naver.maps.LatLng(34.819400, 126.893113),
+    jeonbukC = new naver.maps.LatLng(35.716705, 127.144185),
+    chungnamC = new naver.maps.LatLng(36.42829747263545, 126.76620435615891),
+    chungbukC = new naver.maps.LatLng(36.628503, 127.929344);
+
+var globalSidoCode = {
+    "gangwon": ["4200000000", gangwonC],
+    "gyeonggi": ["4100000000", gyeonggiC],
+    "gyeongnam": ["4800000000", gyeongnamC],
+    "gyeongbuk": ["4700000000", gyeongbukC],
+    "gwangju": ["2900000000", gwangjuC],
+    "daegu": ["2700000000", daeguC],
+    "daejeon": ["3000000000", daejeonC],
+    "busan": ["2600000000", busanC],
+    "seoul": ["1100000000", seoulC],
+    "sejong": ["3600000000", sejongC],
+    "ulsan": ["3100000000", ulsanC],
+    "inchon": ["2800000000", inchonC],
+    "jeonnam": ["4600000000", jeonnamC],
+    "jeonbuk": ["4500000000", jeonbukC],
+    "jeju": ["5000000000", jejuC],
+    "chungnam": ["4400000000", chungnamC],
+    "chungbuk": ["4300000000", chungbukC]
+}
+
+var globalAmd = {
+    "42000": ["4200000000", gangwonC],
+    "41000": ["4100000000", gyeonggiC],
+    "48000": ["4800000000", gyeongnamC],
+    "47000": ["4700000000", gyeongbukC],
+    "29000": ["2900000000", gwangjuC],
+    "27000": ["2700000000", daeguC],
+    "30000": ["3000000000", daejeonC],
+    "26000": ["2600000000", busanC],
+    "11000": ["1100000000", seoulC],
+    "36000": ["3600000000", sejongC],
+    "31000": ["3100000000", ulsanC],
+    "28000": ["2800000000", inchonC],
+    "46000": ["4600000000", jeonnamC],
+    "45000": ["4500000000", jeonbukC],
+    "50000": ["5000000000", jejuC],
+    "44000": ["4400000000", chungnamC],
+    "43000": ["4300000000", chungbukC]
+}
+
+var HOME_PATH = window.HOME_PATH || '.',
+    urlSuffix = '.json',
+    regionGeoJson = [],
+    loadCount = 0;
+
+var map = new naver.maps.Map(document.getElementById('map'), {
+    zoom: 8,
+    // mapTypeId: 'normal',
+    mapTypeId: naver.maps.MapTypeId.HYBRID,
+    center: new naver.maps.LatLng(36.2203004, 128.317960),
+    minZoom: 7, //지도의 최소 줌 레벨
+    zoomControl: true, //줌 컨트롤의 표시 여부
+    zoomControlOptions: { //줌 컨트롤의 옵션
+        position: naver.maps.Position.TOP_RIGHT
+    }
+});
+
+var tooltip = $('<div style="position:absolute;z-index:1000;padding:15px 20px;background-color:white;border:solid 2px #000;font-size:15px; color:black;pointer-events:none;display:none;"></div>');
+
+$("#to-reset").on("click", function(e) {
+    e.preventDefault();
+    let resetCenter = new naver.maps.LatLng(36.2203004, 128.317960)
+    map.setCenter(resetCenter);
+    map.setZoom(7, true);
+    type = -1;
+
+    globalAmdCode = 0;
+    sigunguCenter = 0;
+    holdFeature.setProperty('focus', false);
+    holdSidoFeature.setProperty('focus', false);
+    holdFeature = 0;
+    holdSidoFeature = 0;
+
+    holdSidoName = 0;
+    holdSigunguName = 0;
+    holdSidoBool = false;
+    holdSigunguBool = false;
+    holdEmdBool = false;
+
+});
+
+$("#to-sigungu").on("click", function(e) {
+    e.preventDefault();
+
+    if (type != -1) {
+        map.setCenter(sigunguCenter);
+        map.setZoom(8, true);
+        type = 0;
+        
+        holdFeature.setProperty('focus', false); // 전에 있던 포커스 해제
+        holdFeature = 0;
+        holdSidoBool = true;
+        holdEmdBool = false;
+    }
+});
+
+naver.maps.Event.once(map, 'init', function(e) {
+    map.data.setStyle(function(feature) {
+        var mantle_properties = feature.geometryCollection[0].getRaw().mantle_properties;
+        var styleOptions = {
+            ...mantle_properties,
+        };
+
+        if (feature.getProperty('focus')) {
+            styleOptions.fillOpacity = 0.01;
+            styleOptions.fillColor = '#0f0';
+            styleOptions.strokeColor = '#0f0';
+            styleOptions.strokeWeight = 4;
+            styleOptions.strokeOpacity = 1;
+        }
+        return styleOptions;
+    });
+});
+
+
+tooltip.appendTo(map.getPanes().floatPane);
+map.data.addGeoJson(gangwon_geo, true);
+map.data.addGeoJson(gyeonggi_geo, true);
+map.data.addGeoJson(jeonnam_geo, true);
+map.data.addGeoJson(jeonbuk_geo, true);
+map.data.addGeoJson(gwangju_geo, true);
+map.data.addGeoJson(chungbuk_geo, true);
+map.data.addGeoJson(chungnam_geo, true);
+map.data.addGeoJson(gyeongnam_geo, true);
+map.data.addGeoJson(gyeongbuk_geo, true);
+map.data.addGeoJson(busan_geo, true);
+map.data.addGeoJson(jeju_geo, true);
+map.data.addGeoJson(sejong_geo, true);
+map.data.addGeoJson(seoul_geo, true);
+map.data.addGeoJson(inchon_geo, true);
+map.data.addGeoJson(daejeon_geo, true);
+map.data.addGeoJson(daegu_geo, true);
+map.data.addGeoJson(ulsan_geo, true);
+
+for (let i = 0; i < geolocal.length; i++) {
+    map.data.addGeoJson(geolocal[i], true);
+};
+
+
+/// 여기 수정해야 함
+
+map.data.addListener('click', function(e) {
+
+    var check_feature = e.feature,
+        sidoName = check_feature.getProperty('area1'),
+        sigunguName = check_feature.getProperty('area2'),
+        emdName = check_feature.getProperty('area3'),
+        amdCode = check_feature.getProperty('admcode').substr(0, 5),
+        sidoCode = check_feature.getProperty('admcode').substr(0, 2) + "000";
+
+    globalAmdCode = amdCode;
+    alert("차트를 불러오는데 약간의 시간이 소요됩니다.");
+    var check_center = e.coord;
+
+    var feature;
+    var center;
+
+    // 처음 시도 선택 줌 인, 시군구 변경, check_feature -> feature
+    if ((holdSidoBool == false) & (holdSigunguBool == false)) {
+
+        feature = check_feature;
+        center = check_center;
+
+        // 시군구에서 holdFeature은 시도
+        holdFeature = feature;
+        holdSidoFeature = feature;
+
+        // 시도 선택, 시군구 이동
+        holdSidoBool = true;
+        holdSidoName = sidoName;
+        sigunguCenter = center;
+        type = 0;
+    }
+
+    else if ((holdSidoBool) & (holdSigunguBool == false)) {
+        // 시군구, 읍면동 선택, 전에 클릭한 시도 그대로 유지하면 feature 특성 입력
+        if (holdSidoName == sidoName) {
+
+            feature = check_feature;
+            center = check_center;
+            holdFeature = feature;
+
+            holdSigunguBool = true;
+            holdSigunguName = sigunguName;
+
+            type = 1;
+            var dataScript = $.getScript("{{config.ASSETS_ROOT}}/js/maps/" + globalAmdCode + ".js", function() {
+                emd_type = true;
+                
+
+                for (let i = 0; i < data.length; i++) {
+                    map.data.addGeoJson(data[i], true);
+                };
+
+                tempdata = data;
+
+            });
+        
+        }
+    }
+    else if ((holdSidoBool) & (holdSigunguBool)) {
+        // 읍면동, 읍면동 간 이동
+        if ((holdSidoName == sidoName) & (holdSigunguName == sigunguName) & (sigunguName != '') & (emdName != '')){
+            feature = check_feature;
+            center = check_center;
+
+            holdemdName = emdName;
+            type = 2;
+        }
+    } else {
+    }
+
+    map.data.setStyle(function(feature, holdFeature, holdSidoFeature) {
+
+        var mantle_properties = feature.geometryCollection[0].getRaw().mantle_properties;
+        var styleOptions = {
+            ...mantle_properties,
+        };
+
+        if (feature.getProperty('focus')) {
+
+            if (type == 0) {
+                // 시도 zindex 최소화
+                styleOptions.zIndex = -1;
+            }
+            // error
+            // error part
+            // else if (type != -1){
+            //     var hold_mantle_properties = holdFeature.geometryCollection[0].getRaw().mantle_properties;
+            //     var hold_styleOptions = {
+            //         ...hold_mantle_properties,
+            //     };
+
+            //     var hold_sido_mantle_properties = holdSidoFeature.geometryCollection[0].getRaw().mantle_properties;
+            //     var hold_sido_styleOptions = {
+            //         ...hold_sido_mantle_properties,
+            //     };
+
+            //     // 시군구 읍면동 이동
+            //     if (type == 1) {
+            //         styleOptions.zIndex = 100;
+            //         hold_styleOptions.zIndex = -1;
+            //         hold_styleOptions.visible = false;
+            //         hold_sido_styleOptions.visible = false;
+            //         holdFeature.setProperty('focus', false);
+            //         holdSidoFeature.setProperty('focus', false);
+                    
+            //     }
+
+            //     // 읍면동간 이동
+            //     else if (type == 2) {
+            //         styleOptions.zIndex = 100;
+            //         hold_styleOptions.zIndex = -1;
+            //         hold_styleOptions.visible = false;
+            //         hold_sido_styleOptions.zIndex = -1;
+            //         hold_sido_styleOptions.visible = false;
+            //         holdFeature.setProperty('focus', false);
+            //         holdSidoFeature.setProperty('focus', false);
+            //     }
+            // }
+        }
+        
+        return styleOptions;
+    });
+
+    // var new_center = new naver.maps.LatLng(center['_lat'], center['_lng']);
+    // alert(new_center);
+    // map.setCenter(new_center);
+    // if (type == 0) {
+    //     zoom = 10;
+    //     map.setZoom(zoom, true);
+    // } else if (type == 1) {
+    //     zoom = 11;
+    //     map.setZoom(zoom, true);
+    // } else if (type == 2) {
+    //     zoom = 13;
+    //     map.setZoom(zoom, true);
+    // }
+
+    if (feature.getProperty('focus') != true) {
+        feature.setProperty('focus', true);
+
+    } else {
+        feature.setProperty('focus', false);
+    }
+
+    let x = document.getElementById("ssol-name");
+    let detail_region_name = document.getElementById("region-name");
+    let detail_selct = document.getElementById("local-detail-select");
+    var local = {
+        'name': krChange[legaladdress[globalAmdCode][0]],
+        'amdcode': globalSidoCode[krChange[innerText]][0]
+    };
+
+    if (type == 0) {
+        $.ajax({
+        type: 'POST',
+        url: 'type0_func',
+        async: false,
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(local),
+        success: function(response) {
+            var local_lower = response['localName'].toLowerCase();
+            detail_selct.innerText = enChange[local_lower] + ' 선택';
+            detail_region_name.innerText = enChange[local_lower];
+            detail_region_name.style.color = "black";
+
+            resetgraph();
+            totalCountChange(response);
+            var run_morris = morris_map_call(response);
+            probAverage(response);
+
+            prohibit_rsp = response['prohibitArea'];
+            prohibit_table(prohibit_rsp);
+        
+        }
+    })
+    } 
+    else if (type == 1) {
+        typeAjaxFunc(local, 'type1_func', detail_selct, detail_region_name)    
+    } else if (type == 2) {
+        typeAjaxFunc(local, 'type2_func', detail_selct, detail_region_name)    
+    }
+});
+
+
+map.data.addListener('mouseover', function(e) {
+    var feature = e.feature,
+        sidoName = feature.getProperty('area1'),
+        sigunguName = feature.getProperty('area2'),
+        emdName = feature.getProperty('area3');
+
+    var coord = e.coord;
+    let name = 0;
+
+    if (emdName != '') {
+        name = emdName;
+    } else if (sigunguName != '') {
+        name = sigunguName;
+    } else{
+        name = sidoName;
+    }
+
+    if ((holdFeature != feature) || (holdSidoFeature != feature)){
+    tooltip.css({
+        display: '',
+        left: e.offset.x,
+        top: e.offset.y
+    }).text(name);
+
+    map.data.overrideStyle(feature, {
+        fillOpacity: 0.6,
+        strokeWeight: 4,
+        strokeOpacity: 0.001
+    });
+    }
+});
+
+map.data.addListener('mouseout', function(e) {
+    
+    tooltip.hide().empty();
+    map.data.revertStyle();
+});
+
+$(document).ready(function() {
+    setTimeout(function() {
+
+        let x = document.getElementById("ssol-name");
+        let detail_selct = document.getElementById("local-detail-select");
+
+        var local = {
+            'name': 'busan',
+            'amdCode': '260000000'
+        }
+
+        // 줌 이동
+        map.setCenter(globalSidoCode[local['name']][1]);
+        zoom = 10;
+        map.setZoom(zoom, true);
+
+        $.ajax({
+            type: 'POST',
+            url: 'init_func',
+            async: false,
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify(local),
+            success: function(response) {
+                resetgraph();
+                totalCountChange(response);
+                probAverage(response);
+
+                var run_morris = morris_map_call(response);
+
+                prohibit_rsp = response['prohibitArea'];
+                prohibit_table(prohibit_rsp);
+            }
+        })
+    })
+});
+
+function navSelectChart(elementId) {
+    var innerText = document.getElementById(elementId).innerText;
+    let x = document.getElementById("ssol-name");
+    let detail_region_name = document.getElementById("region-name");
+    let detail_selct = document.getElementById("local-detail-select");
+    var local = {
+        'name': krChange[innerText],
+        'amdcode': globalSidoCode[krChange[innerText]][0]
+    };
+
+    alert("차트를 불러오는데 약간의 시간이 소요됩니다.")
+
+    map.setCenter(globalSidoCode[local['name']][1]);
+    zoom = 10;
+    map.setZoom(zoom, true);
+
+    $.ajax({
+        type: 'POST',
+        url: 'type0_func',
+        async: false,
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(local),
+        success: function(response) {
+            var local_lower = response['localName'].toLowerCase();
+            detail_selct.innerText = enChange[local_lower] + ' 선택';
+            detail_region_name.innerText = enChange[local_lower];
+            detail_region_name.style.color = "black";
+
+            
+            resetgraph();
+            totalCountChange(response);
+            var run_morris = morris_map_call(response);
+            probAverage(response);
+
+            prohibit_rsp = response['prohibitArea'];
+            prohibit_table(prohibit_rsp);
+        }
+    })
+};
+
+function typeAjaxFunc(local, urllink, detail_selct, detail_region_name){
+    $.ajax({
+        type: 'POST',
+        url: urllink,
+        async: false,
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(local),
+        success: function(response) {
+            var local_lower = response['localName'].toLowerCase();
+            detail_selct.innerText = enChange[local_lower] + ' 선택';
+            detail_region_name.innerText = enChange[local_lower];
+            detail_region_name.style.color = "black";
+
+            resetgraph();
+            totalCountChange(response);
+            probAverage(response);
+            var run_morris = morris_map_call(response);
+        
+        }
+    })
+}
+
+var resetgraph = function() {
+    $('#morris-donut-chart1').remove();
+    $('#total-count').remove(); // this is my <canvas> element
+    $('#index-donut').append('<div id="morris-donut-chart1" style="height:200px; flex: 1; width: 50%; float: left;"></div>');
+    $('#index-donut').append('<div id="total-count" style="height:200px; flex: 1; width: 50%; float: right;"></div>');
+
+    $('#morris-area-curved-chart').remove(); // this is my <canvas> element
+    $('#index-curve').append('<div id="morris-area-curved-chart" style="height:200px"></div>');
+
+    $('#total-prob').remove();
+    $('#index-prob').append('<div id="total-prob" style="height:200px;"></div>');
+
+    
+
+    var donutChartReset = document.querySelector('morris-donut-chart');
+    var curveChartReset = document.querySelector('morris-area-curved-chart');
+};
+
+
+var prohibit_table = function(response){
+    $('.temp-prohibit').remove();
+    for (let i = 0; i < response.length; i++) {
+        let text = '<tr class="temp-prohibit" style="background-color: #1de9b6;"><td>'+i+'</td><td>'+response[i].amdCode+'</td><td>'+response[i].value+'</td></tr>';
+        $('#prohibit-table').append(text);
+}
+    $setRows.submit();
+}
+
+function totalCountChange(response){
+    document.getElementById("total-count").innerHTML = "전체대비 발생확률</br>" + ((response['totalCount']*1 / 5955346) * 100).toFixed(2) + "%" ;
+    document.getElementById("total-count").style.color = '#04a9f5';
+    document.getElementById("total-count").style.fontSize = "40px";
+    document.getElementById("total-count").style.textAlign = "center";
+    document.getElementById("total-count").style.padding = "30px 0";
+}
+
+function probAverage(response){
+    document.getElementById("total-prob").innerHTML = "머신러닝 발생확률평균</br>" + (response['prob_avg']*1).toFixed(2) + "%" ;
+    document.getElementById("total-prob").style.color = '#04a9f5';
+    document.getElementById("total-prob").style.fontSize = "40px";
+    document.getElementById("total-prob").style.textAlign = "center";
+    document.getElementById("total-prob").style.padding = "30px 0";
+}
+
+
+
+function morris_map_call(response) {
+    Morris.Donut({
+        element: 'morris-donut-chart1',
+        data: [{
+                value: response['localValue'][0]['value'],
+                label: response['localValue'][0]['name']
+            },
+            {
+                value: response['localValue'][1]['value'],
+                label: response['localValue'][1]['name']
+            },
+            {
+                value: response['localValue'][2]['value'],
+                label: response['localValue'][2]['name']
+            },
+            {
+                value: response['localValue'][3]['value'],
+                label: response['localValue'][3]['name']
+            },
+            {
+                value: response['localValue'][3]['value'],
+                label: response['localValue'][3]['name']
+            }
+        ],
+        colors: [
+            '#1de9b6',
+            '#A389D4',
+            '#04a9f5',
+            '#1dc4e9',
+            '#A389D4',
+        ],
+        resize: true,
+        formatter: function(x) {
+            return "발생 횟수 : " + x
+        }
+    });
+    Morris.Area({
+        element: 'morris-area-curved-chart',
+        data: [{
+            period: '2014',
+            value: response['yearValue'][0]['value'],
+        }, {
+            period: '2015',
+            value: response['yearValue'][1]['value'],
+        }, {
+            period: '2016',
+            value: response['yearValue'][2]['value'],
+        }, {
+            period: '2017',
+            value: response['yearValue'][3]['value'],
+        }, {
+            period: '2018',
+            value: response['yearValue'][4]['value'],
+        }, {
+            period: '2019',
+            value: response['yearValue'][5]['value'],
+        }, {
+            period: '2020',
+            value: response['yearValue'][6]['value'],
+        }, {
+            period: '2021',
+            value: response['yearValue'][7]['value'],
+        }],
+        lineColors: ['#1de9b6'],
+        xkey: 'period',
+        ykeys: ['value'],
+        labels: ['Site A'],
+        pointSize: 0,
+        lineWidth: 0,
+        resize: true,
+        fillOpacity: 0.8,
+        responsive: true,
+        behaveLikeLine: true,
+        gridLineColor: '#d2d2d2',
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = '<div class="morris-hover morris-default-style" style="left: 10px; top: 18px;">' +
+                '<div class="morris-hover-row-label">' +
+                row.period + '</div>' + '<div class="morris-hover-point" style="color: #0b62a4">' +
+                row.value + '</div></div>'
+            return hover;
+        }
+    });
+    
+}
+
+
+</script>
+
+
+{% endblock javascripts %}

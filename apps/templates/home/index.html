@@ -1,0 +1,42 @@
+{% extends "layouts/base-home.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="pcoded-main-container">
+    <div id = "homepage" class="pcoded-wrapper">
+        
+    </div>
+</div>
+
+
+{% include "home/footer.html" %}
+
+{% endblock content %}
+
+{% block javascripts %}
+
+
+<script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js?ver=1"></script>
+
+<script>
+
+    $(document).ready(function() {
+            $.ajax({
+                url : "index_root.html",
+                success : function(result) {
+                    $('#homepage').html(result);
+                }
+            });
+        });
+</script>
+    
+{% endblock javascripts %}
+
+<!-- Specific Page JS goes HERE  -->
+

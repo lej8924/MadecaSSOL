@@ -1,0 +1,1693 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} MadecaSSOL {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">MadecaSSOl Chart</h5>
+                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                        <li id="region-name" class="breadcrumb-item"><a href="javascript:">부산광역시</a></li>
+                                        <li id="ssol-name" class="breadcrumb-item"><a href="javascript:">발병 지역 기후 통계</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <!-- [ Morris Chart ] start -->
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;height:410px;">
+                                        <div id="chart-date-line1" class="card-block">
+                                            <h6>최다 발생 지역과 최소 발생 지역 평균기온</h6>
+                                            <div id="morris-line-smooth-chart1" style="height:300px; flex: 1; width: 100%; float: left;"></div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%; height:410px;">
+                                        <div id="chart-date-line2" class="card-block">
+                                            <h6>최다 발생 지역과 최소 발생 지역 최저기온</h6>
+                                            <div id="morris-line-smooth-chart2" style="height:300px; flex: 1; width: 100%; float: left;"></div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;height:410px;">
+                                        <div id="chart-date-line3" class="card-block">
+                                            <h6>최다 발생 지역과 최소 발생 지역 최대기온</h6>
+                                            <div id="morris-line-smooth-chart3" style="height:300px; flex: 1; width: 100%; float: left;"></div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;height:410px;">
+                                        <div id="chart-date-line4" class="card-block">
+                                            <h6>최다 발생 지역과 최소 발생 지역 최대순간풍속 풍향(16방위)</h6>
+                                            <div id="morris-line-smooth-chart4" style="height:300px; flex: 1; width: 100%; float: left;"></div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;height:410px;">
+                                        <div id="chart-date-line5" class="card-block">
+                                            <h6>최다 발생 지역과 최소 발생 지역 최대풍속(m/s)</h6>
+                                            <div id="morris-line-smooth-chart5" style="height:300px; flex: 1; width: 100%; float: left;"></div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;height:410px;">
+                                        <div id="chart-date-line6" class="card-block">
+                                            <h6>최다 발생 지역과 최소 발생 지역 최대풍속 풍향(16방위)</h6>
+                                            <div id="morris-line-smooth-chart6" style="height:300px; flex: 1; width: 100%; float: left;"></div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;height:410px;">
+                                        <div id="chart-date-line7" class="card-block">
+                                            <h6>최다 발생 지역과 최소 발생 지역 평균풍속(m/s)</h6>
+                                            <div id="morris-line-smooth-chart7" style="height:300px; flex: 1; width: 100%; float: left;"></div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;height:410px;">
+                                        <div id="chart-date-line8" class="card-block">
+                                            <h6>최다 발생 지역과 최소 발생 지역 최다풍향(16방위)</h6>
+                                            <div id="morris-line-smooth-chart8" style="height:300px; flex: 1; width: 100%; float: left;"></div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;height:410px;">
+                                        <div id="chart-date-line9" class="card-block">
+                                            <h6>최다 발생 지역과 최소 발생 지역 평균이슬점온도(°C)</h6>
+                                            <div id="morris-line-smooth-chart9" style="height:300px; flex: 1; width: 100%; float: left;"></div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;height:410px;">
+                                        <div id="chart-date-line10" class="card-block">
+                                            <h6>최다 발생 지역과 최소 발생 지역 최소상대습도(%)</h6>
+                                            <div id="morris-line-smooth-chart10" style="height:300px; flex: 1; width: 100%; float: left;"></div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;height:410px;">
+                                        <div id="chart-date-line11" class="card-block">
+                                            <h6>최다 발생 지역과 최소 발생 지역 평균상대습도(%)</h6>
+                                            <div id="morris-line-smooth-chart11" style="height:300px; flex: 1; width: 100%; float: left;"></div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;height:410px;">
+                                        <div id="chart-date-line12" class="card-block">
+                                            <h6>최다 발생 지역과 최소 발생 지역 평균수증기압(hPa)</h6>
+                                            <div id="morris-line-smooth-chart12" style="height:300px; flex: 1; width: 100%; float: left;"></div>                                       
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;height:410px;">
+                                        <div id="chart-date-line13" class="card-block">
+                                            <h6>최다 발생 지역과 최소 발생 지역 평균현지기압(hPa)</h6>
+                                            <div id="morris-line-smooth-chart13" style="height:300px; flex: 1; width: 100%; float: left;"></div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;height:410px;">
+                                        <div id="chart-date-line14" class="card-block">
+                                            <h6>최다 발생 지역과 최소 발생 지역 합계 일조시간(hr)</h6>
+                                            <div id="morris-line-smooth-chart14" style="height:300px; flex: 1; width: 100%; float: left;"></div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;height:410px;">
+                                        <div id="chart-date-line15" class="card-block">
+                                            <h6>최다 발생 지역과 최소 발생 지역 평균지면온도(°C)</h6>
+                                            <div id="morris-line-smooth-chart15" style="height:300px; flex: 1; width: 100%; float: left;"></div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;height:410px;">
+                                        <div id="chart-date-line16" class="card-block">
+                                            <h6>최다 발생 지역과 최소 발생 지역 월강수량합(mm)</h6>
+                                            <div id="morris-line-smooth-chart16" style="height:300px; flex: 1; width: 100%; float: left;"></div>                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ Main Content ] end -->
+
+                            <div id="myModal" class="modal fade" role="dialog">
+                                <div class="modal-dialog">
+    
+                                    <!-- Modal content-->
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="col-xl-12">
+                                            <div class="card">
+                                                <div class="card-header">
+                                                    <h5>발병 지역 기후 통계 세부 차트</h5>
+                                                    <span id="tablename" class="d-block m-t-5">임목지/무립목지</span>
+                                                </div>
+                                                <div class="card-block table-border-style">
+                                                    <div class="table-responsive">
+                                                        <table class="table">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>#</th>
+                                                                    <th id="n01">임목지/무립목지/비산림 구분</th>
+                                                                    <th id="n02">코드 번호</th>
+                                                                    <th id="n03">발생 횟수</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <th>1</th>
+                                                                    <th id="n11">입목지</th>
+                                                                    <th id="n12">1</th>
+                                                                    <th id="n13">130416</th>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">2</th>
+                                                                    <td id="n21">무입목지</td>
+                                                                    <td id="n22">2</td>
+                                                                    <td id="n23">602</td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <th scope="row">3</th>
+                                                                    <td id="n31">비산림</td>
+                                                                    <td id="n32">0</td>
+                                                                    <td id="n33">313</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+    
+                                </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+{% include "home/footer.html" %}
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+<script src="{{ config.ASSETS_ROOT }}/js/custom.js"></script>
+
+<script>
+var global_e = "";
+var flag = false;
+var cnt = 0;
+
+
+$(document).ready(function() {
+    setTimeout(function() {
+
+        let x = document.getElementById("ssol-name");
+        let detail_selct = document.getElementById("local-detail-select")
+
+        var local = {
+            'name': 'busan'
+        }
+        $.ajax({
+            type: 'POST',
+            url: 'weather_bug_occ',
+            async: false,
+            dataType: 'json',
+            contentType: 'application/json',
+            data: JSON.stringify(local),
+            success: function(response) {
+
+                var local_lower = response['localName'].toLowerCase();
+                detail_selct.innerText = enChange[local_lower] + ' 선택';
+                resetgraph();
+                const monthNames = ["", "1", "2", "3", "4", "5", "6",
+                    "7", "8", "9", "10", "11", "12"
+                ];
+                var morris_chart = morris_call(response, monthNames, x);
+            }
+        })
+    })
+});
+
+
+function navSelectChart(elementId) {
+    var innerText = document.getElementById(elementId).innerText;
+    let x = document.getElementById("ssol-name");
+    let detail_region_name = document.getElementById("region-name")
+    let detail_selct = document.getElementById("local-detail-select")
+    var local = {
+        'name': krChange[innerText]
+    }
+    $.ajax({
+        type: 'POST',
+        url: 'weather_bug_occ',
+        async: false,
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(local),
+        success: function(response) {
+            var local_lower = response['localName'].toLowerCase();
+            detail_selct.innerText = enChange[local_lower] + ' 선택';
+            detail_region_name.innerText = enChange[local_lower];
+            detail_region_name.style.color = "black";
+
+            resetgraph();
+            flag_f = true;
+            const monthNames = ["", "1", "2", "3", "4", "5", "6",
+                "7", "8", "9", "10", "11", "12"
+            ];
+
+            var morrist_chart = morris_call(response, monthNames, x)
+        }
+    })
+};
+
+function morris_call(response, monthNames, x) {
+    Morris.Line({
+        element: 'morris-line-smooth-chart1',
+        data: [{
+                y: 1,
+                a: response['ASOS_STATION'][0]['CSS_AVG_01'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_01']
+            },
+            {
+                y: 2,
+                a: response['ASOS_STATION'][0]['CSS_AVG_02'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_02']
+            },
+            {
+                y: 3,
+                a: response['ASOS_STATION'][0]['CSS_AVG_03'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_03']
+            },
+            {
+                y: 4,
+                a: response['ASOS_STATION'][0]['CSS_AVG_04'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_04']
+            },
+            {
+                y: 5,
+                a: response['ASOS_STATION'][0]['CSS_AVG_05'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_05']
+            },
+            {
+                y: 6,
+                a: response['ASOS_STATION'][0]['CSS_AVG_06'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_06']
+            },
+            {
+                y: 7,
+                a: response['ASOS_STATION'][0]['CSS_AVG_07'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_07']
+            },
+            {
+                y: 8,
+                a: response['ASOS_STATION'][0]['CSS_AVG_08'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_08']
+            },
+            {
+                y: 9,
+                a: response['ASOS_STATION'][0]['CSS_AVG_09'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_09']
+            },
+            {
+                y: 10,
+                a: response['ASOS_STATION'][0]['CSS_AVG_10'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_10']
+            },
+            {
+                y: 11,
+                a: response['ASOS_STATION'][0]['CSS_AVG_11'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_11']
+            },
+            {
+                y: 12,
+                a: response['ASOS_STATION'][0]['CSS_AVG_12'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        parseTime: false,
+        xLabelFormat: function(x) {
+            var index = parseInt(x.src.y);
+            return monthNames[index];
+        },
+        xLabels: "month",
+        redraw: true,
+        resize: false,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#1de9b6'>최다 발생 평균기온 : " + row.a + "</span><br><span style='color: #A389D4'>최소 발생 평균기온 : " + row.b + "</span></b>";
+            return hover;
+        },
+        responsive: true,
+        labels: ['최다 발생 평균기온', '최소 발생 평균기온'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart2',
+        data: [{
+                y: 1,
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_01'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_01']
+            },
+            {
+                y: 2,
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_02'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_02']
+            },
+            {
+                y: 3,
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_03'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_03']
+            },
+            {
+                y: 4,
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_04'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_04']
+            },
+            {
+                y: 5,
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_05'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_05']
+            },
+            {
+                y: 6,
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_06'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_06']
+            },
+            {
+                y: 7,
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_07'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_07']
+            },
+            {
+                y: 8,
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_08'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_08']
+            },
+            {
+                y: 9,
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_09'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_09']
+            },
+            {
+                y: 10,
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_10'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_10']
+            },
+            {
+                y: 11,
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_11'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_11']
+            },
+            {
+                y: 12,
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_12'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        parseTime: false,
+        xLabelFormat: function(x) {
+            var index = parseInt(x.src.y);
+            return monthNames[index];
+        },
+        xLabels: "month",
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#1de9b6'>최다 발생 최저기온 : " + row.a + "</span><br><span style='color: #A389D4'>최소 발생 최저기온 : " + row.b + "</span></b>";
+            return hover;
+        },
+        responsive: true,
+        labels: ['최다 발생 최저기온', '최소 발생 최저기온'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+
+    Morris.Line({
+        element: 'morris-line-smooth-chart3',
+        data: [{
+                y: 1,
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_01'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_01']
+            },
+            {
+                y: 2,
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_02'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_02']
+            },
+            {
+                y: 3,
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_03'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_03']
+            },
+            {
+                y: 4,
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_04'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_04']
+            },
+            {
+                y: 5,
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_05'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_05']
+            },
+            {
+                y: 6,
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_06'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_06']
+            },
+            {
+                y: 7,
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_07'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_07']
+            },
+            {
+                y: 8,
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_08'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_08']
+            },
+            {
+                y: 9,
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_09'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_09']
+            },
+            {
+                y: 10,
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_10'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_10']
+            },
+            {
+                y: 11,
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_11'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_11']
+            },
+            {
+                y: 12,
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_12'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        parseTime: false,
+        xLabelFormat: function(x) {
+            var index = parseInt(x.src.y);
+            return monthNames[index];
+        },
+        xLabels: "month",
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#1de9b6'>최다 발생 최대기온 : " + row.a + "</span><br><span style='color: #A389D4'>최소 발생 최소기온 : " + row.b + "</span></b>";
+            return hover;
+        },
+        responsive: true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+
+    Morris.Line({
+        element: 'morris-line-smooth-chart4',
+        data: [{
+                y: 1,
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_01'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_01']
+            },
+            {
+                y: 2,
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_02'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_02']
+            },
+            {
+                y: 3,
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_03'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_03']
+            },
+            {
+                y: 4,
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_04'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_04']
+            },
+            {
+                y: 5,
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_05'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_05']
+            },
+            {
+                y: 6,
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_06'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_06']
+            },
+            {
+                y: 7,
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_07'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_07']
+            },
+            {
+                y: 8,
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_08'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_08']
+            },
+            {
+                y: 9,
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_09'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_09']
+            },
+            {
+                y: 10,
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_10'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_10']
+            },
+            {
+                y: 11,
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_11'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_11']
+            },
+            {
+                y: 12,
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_12'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_12']
+            }
+        ],
+        xkey: 'y',
+        parseTime: false,
+        xLabelFormat: function(x) {
+            var index = parseInt(x.src.y);
+            return monthNames[index];
+        },
+        xLabels: "month",
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#1de9b6'>최다 발생 최대순간풍속 풍향(16방위) : " + row.a + "</span><br><span style='color: #A389D4'>최소 발생 최대순간풍속 풍향(16방위) : " + row.b + "</span></b>";
+            return hover;
+        },
+        responsive: true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart5',
+        data: [{
+                y: 1,
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_01'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_01']
+            },
+            {
+                y: 2,
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_02'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_02']
+            },
+            {
+                y: 3,
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_03'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_03']
+            },
+            {
+                y: 4,
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_04'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_04']
+            },
+            {
+                y: 5,
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_05'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_05']
+            },
+            {
+                y: 6,
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_06'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_06']
+            },
+            {
+                y: 7,
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_07'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_07']
+            },
+            {
+                y: 8,
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_08'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_08']
+            },
+            {
+                y: 9,
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_09'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_09']
+            },
+            {
+                y: 10,
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_10'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_10']
+            },
+            {
+                y: 11,
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_11'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_11']
+            },
+            {
+                y: 12,
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_12'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_12']
+            }
+        ],
+        xkey: 'y',
+        parseTime: false,
+        xLabelFormat: function(x) {
+            var index = parseInt(x.src.y);
+            return monthNames[index];
+        },
+        xLabels: "month",
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#1de9b6'>최다 발생 최대풍속(m/s) : " + row.a + "</span><br><span style='color: #A389D4'>최소 발생 최대풍속(m/s) : " + row.b + "</span></b>";
+            return hover;
+        },
+        responsive: true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+
+    Morris.Line({
+        element: 'morris-line-smooth-chart6',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_01'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_02'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_03'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_04'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_05'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_06'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_07'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_08'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_09'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_10'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_11'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_12'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_12']
+            }
+        ],
+        xkey: 'y',
+        parseTime: false,
+        xLabelFormat: function(x) {
+            var index = parseInt(x.src.y);
+            return monthNames[index];
+        },
+        xLabels: "month",
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#1de9b6'>최다 발생 최대풍속 풍향(16방위) : " + row.a + "</span><br><span style='color: #A389D4'>최소 발생 최대풍속 풍향(16방위) : " + row.b + "</span></b>";
+            return hover;
+        },
+        responsive: true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+
+    Morris.Line({
+        element: 'morris-line-smooth-chart7',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_01'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_02'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_03'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_04'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_05'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_06'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_07'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_08'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_09'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_10'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_11'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_12'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_12']
+            }
+        ],
+        xkey: 'y',
+        parseTime: false,
+        xLabelFormat: function(x) {
+            var index = parseInt(x.src.y);
+            return monthNames[index];
+        },
+        xLabels: "month",
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#1de9b6'>최다 발생 평균풍속(m/s) : " + row.a + "</span><br><span style='color: #A389D4'>최소 발생 평균풍속(m/s) : " + row.b + "</span></b>";
+            return hover;
+        },
+        responsive: true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+
+    Morris.Line({
+        element: 'morris-line-smooth-chart8',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_01'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_02'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_03'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_04'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_05'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_06'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_07'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_08'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_09'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_10'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_11'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_12'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_12']
+            }
+        ],
+        xkey: 'y',
+        parseTime: false,
+        xLabelFormat: function(x) {
+            var index = parseInt(x.src.y);
+            return monthNames[index];
+        },
+        xLabels: "month",
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#1de9b6'>최다 발생 최다풍향(16방위) : " + row.a + "</span><br><span style='color: #A389D4'>최소 발생 최다풍향(16방위) : " + row.b + "</span></b>";
+            return hover;
+        },
+        responsive: true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart9',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_01'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_02'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_03'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_04'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_05'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_06'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_07'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_08'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_09'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_10'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_11'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_12'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        parseTime: false,
+        xLabelFormat: function(x) {
+            var index = parseInt(x.src.y);
+            return monthNames[index];
+        },
+        xLabels: "month",
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#1de9b6'>최다 발생 평균이슬점온도(°C) : " + row.a + "</span><br><span style='color: #A389D4'>최소 발생 평균이슬점온도(°C) : " + row.b + "</span></b>";
+            return hover;
+        },
+        responsive: true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart10',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_01'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_02'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_03'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_04'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_05'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_06'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_07'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_08'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_09'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_10'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_11'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_12'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_12']
+            }
+        ],
+        xkey: 'y',
+        parseTime: false,
+        xLabelFormat: function(x) {
+            var index = parseInt(x.src.y);
+            return monthNames[index];
+        },
+        xLabels: "month",
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#1de9b6'>최다 발생 최소상대습도(%) : " + row.a + "</span><br><span style='color: #A389D4'>최소 발생 최소상대습도(%) : " + row.b + "</span></b>";
+            return hover;
+        },
+        responsive: true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart11',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_01'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_02'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_03'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_04'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_05'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_06'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_07'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_08'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_09'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_10'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_11'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_12'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        parseTime: false,
+        xLabelFormat: function(x) {
+            var index = parseInt(x.src.y);
+            return monthNames[index];
+        },
+        xLabels: "month",
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#1de9b6'>최다 발생 평균상대습도(%) : " + row.a + "</span><br><span style='color: #A389D4'>최소 발생 평균상대습도(%) : " + row.b + "</span></b>";
+            return hover;
+        },
+        responsive: true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart12',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_01'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_02'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_03'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_04'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_05'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_06'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_07'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_08'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_09'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_10'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_11'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_12'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        parseTime: false,
+        xLabelFormat: function(x) {
+            var index = parseInt(x.src.y);
+            return monthNames[index];
+        },
+        xLabels: "month",
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#1de9b6'>최다 발생 평균수증기압(hPa) : " + row.a + "</span><br><span style='color: #A389D4'>최소 발생 평균수증기압(hPa) : " + row.b + "</span></b>";
+            return hover;
+        },
+        responsive: true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart13',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_01'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_02'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_03'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_04'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_05'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_06'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_07'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_08'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_09'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_10'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_11'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_12'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        parseTime: false,
+        xLabelFormat: function(x) {
+            var index = parseInt(x.src.y);
+            return monthNames[index];
+        },
+        xLabels: "month",
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#1de9b6'>최다 발생 평균현지기압(hPa) : " + row.a + "</span><br><span style='color: #A389D4'>최소 발생 평균현지기압(hPa) : " + row.b + "</span></b>";
+            return hover;
+        },
+        responsive: true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart14',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['PDOS_HR_01'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['PDOS_HR_02'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['PDOS_HR_03'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['PDOS_HR_04'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['PDOS_HR_05'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['PDOS_HR_06'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['PDOS_HR_07'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['PDOS_HR_08'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['PDOS_HR_09'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['PDOS_HR_10'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['PDOS_HR_11'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['PDOS_HR_12'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_12']
+            }
+        ],
+        xkey: 'y',
+        parseTime: false,
+        xLabelFormat: function(x) {
+            var index = parseInt(x.src.y);
+            return monthNames[index];
+        },
+        xLabels: "month",
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#1de9b6'>최다 발생 합계 일조시간(hr) : " + row.a + "</span><br><span style='color: #A389D4'>최소 발생 합계 일조시간(hr) : " + row.b + "</span></b>";
+            return hover;
+        },
+        responsive: true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart15',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_01'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_02'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_03'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_04'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_05'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_06'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_07'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_08'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_09'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_10'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_11'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_12'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        parseTime: false,
+        xLabelFormat: function(x) {
+            var index = parseInt(x.src.y);
+            return monthNames[index];
+        },
+        xLabels: "month",
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#1de9b6'>최다 발생 평균지면온도(°C) : " + row.a + "</span><br><span style='color: #A389D4'>최소 발생 평균지면온도(°C) : " + row.b + "</span></b>";
+            return hover;
+        },
+        responsive: true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart16',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['RF_AVG_01'],
+                b: response['ASOS_STATION'][1]['RF_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['RF_AVG_02'],
+                b: response['ASOS_STATION'][1]['RF_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['RF_AVG_03'],
+                b: response['ASOS_STATION'][1]['RF_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['RF_AVG_04'],
+                b: response['ASOS_STATION'][1]['RF_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['RF_AVG_05'],
+                b: response['ASOS_STATION'][1]['RF_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['RF_AVG_06'],
+                b: response['ASOS_STATION'][1]['RF_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['RF_AVG_07'],
+                b: response['ASOS_STATION'][1]['RF_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['RF_AVG_08'],
+                b: response['ASOS_STATION'][1]['RF_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['RF_AVG_09'],
+                b: response['ASOS_STATION'][1]['RF_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['RF_AVG_10'],
+                b: response['ASOS_STATION'][1]['RF_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['RF_AVG_11'],
+                b: response['ASOS_STATION'][1]['RF_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['RF_AVG_12'],
+                b: response['ASOS_STATION'][1]['RF_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        parseTime: false,
+        xLabelFormat: function(x) {
+            var index = parseInt(x.src.y);
+            return monthNames[index];
+        },
+        xLabels: "month",
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#1de9b6'>최다 발생 월강수량합(mm) : " + row.a + "</span><br><span style='color: #A389D4'>최소발생 월강수량합(mm) : " + row.b + "</span></b>";
+            return hover;
+        },
+        responsive: true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    })
+};
+
+
+
+var resetgraph = function() {
+    $('#morris-line-smooth-chart1').remove(); // this is my <canvas> element
+    $('#chart-date-line1').append(' <div id="morris-line-smooth-chart1" style="height:300px; flex: 1; width: 100%; float: left;"></div> ');
+
+    $('#morris-line-smooth-chart2').remove();
+    $('#chart-date-line2').append(' <div id="morris-line-smooth-chart2" style="height:300px; flex: 1; width: 100%; float: right;"></div>');
+
+    $('#morris-line-smooth-chart3').remove(); // this is my <canvas> element
+    $('#chart-date-line3').append(' <div id="morris-line-smooth-chart3" style="height:300px; flex: 1; width: 100%; float: left;" ></div>');
+
+    $('#morris-line-smooth-chart4').remove(); // this is my <canvas> element
+    $('#chart-date-line4').append(' <div id="morris-line-smooth-chart4" style="height:300px; flex: 1; width: 100%; float: right;"></div>');
+
+    $('#morris-line-smooth-chart5').remove(); // this is my <canvas> element
+    $('#chart-date-line5').append(' <div id="morris-line-smooth-chart5" style="height:300px; flex: 1; width: 100%; float: left;"></div>');
+
+    $('#morris-line-smooth-chart6').remove(); // this is my <canvas> element
+    $('#chart-date-line6').append(' <div id="morris-line-smooth-chart6" style="height:300px; flex: 1; width: 100%; float: right;"></div>');
+
+    $('#morris-line-smooth-chart7').remove(); // this is my <canvas> element
+    $('#chart-date-line7').append(' <div id="morris-line-smooth-chart7" style="height:300px; flex: 1; width: 100%; float: left;"></div>');
+
+    $('#morris-line-smooth-chart8').remove(); // this is my <canvas> element    
+    $('#chart-date-line8').append(' <div id="morris-line-smooth-chart8" style="height:300px; flex: 1; width: 100%; float: right;"></div>');
+
+    $('#morris-line-smooth-chart9').remove(); // this is my <canvas> element
+    $('#chart-date-line9').append(' <div id="morris-line-smooth-chart9" style="height:300px; flex: 1; width: 100%; float: left;"></div>');
+
+    $('#morris-line-smooth-chart10').remove(); // this is my <canvas> element  
+    $('#chart-date-line10').append(' <div id="morris-line-smooth-chart10" style="height:300px; flex: 1; width: 100%; float: right;"></div>');
+
+    $('#morris-line-smooth-chart11').remove(); // this is my <canvas> element   
+    $('#chart-date-line11').append(' <div id="morris-line-smooth-chart11" style="height:300px; flex: 1; width: 100%; float: left;" ></div>');
+
+    $('#morris-line-smooth-chart12').remove(); // this is my <canvas> element 
+    $('#chart-date-line12').append(' <div id="morris-line-smooth-chart12" style="height:300px; flex: 1; width: 100%; float: right;"></div>');
+
+    $('#morris-line-smooth-chart13').remove(); // this is my <canvas> element
+    $('#chart-date-line13').append(' <div id="morris-line-smooth-chart13" style="height:300px; flex: 1; width: 100%; float: left;"></div>');
+
+    $('#morris-line-smooth-chart14').remove(); // this is my <canvas> element    
+    $('#chart-date-line14').append(' <div id="morris-line-smooth-chart14" style="height:300px; flex: 1; width: 100%; float: right;"></div>');
+
+    $('#morris-line-smooth-chart15').remove(); // this is my <canvas> element 
+    $('#chart-date-line15').append(' <div id="morris-line-smooth-chart15" style="height:300px; flex: 1; width: 100%; float: left;"></div>');
+
+    $('#morris-line-smooth-chart16').remove(); // this is my <canvas> element 
+    $('#chart-date-line16').append(' <div id="morris-line-smooth-chart16" style="height:300px; flex: 1; width: 100%; float: right;"></div>');
+};
+
+</script>
+
+
+
+
+
+
+{% endblock javascripts %}

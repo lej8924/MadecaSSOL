@@ -1,0 +1,173 @@
+<!-- Remove the container if you want to extend the Footer to full width. -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.12.0/css/mdb.min.css">
+<script src="https://kit.fontawesome.com/5f13ca5c0e.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  function divResize() {
+      var div = document.getElementById('footer_wrap');
+      div.style.width = window.innerWidth - 200 + 'px';
+  }
+  window.onload = function() {
+      div2Resize();
+
+      // 브라우저 크기가 변할 시 동적으로 사이즈를 조절해야 하는경우
+      window.addEventListener('resize', divResize);
+  }
+</script>
+<style>
+   #footer_wrap {
+ 
+      width: 87%;
+      height: 100%;
+      float: right;
+
+}</style>
+
+  <div id="footer_wrap">
+    <footer class=" text-center text-lg-start text-white" style="background-color:#828282">
+      <!-- Grid container -->
+      <div class="container p-4">
+        <!--Grid row-->
+        <div class="row my-4">
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+  
+            <div class="rounded-circle bg-white shadow-1-strong d-flex align-items-center justify-content-center mb-4 mx-auto" style="width: 150px; height: 150px;">
+              <img src="{{ config.ASSETS_ROOT }}/images/pinetree_logo.png" height="70" alt=""
+                   loading="lazy" />
+            </div>
+  
+            <p class="text-center"><h3>MadecaSSOL</h3>We are Gashigochibul</p>
+  
+            <ul class="list-unstyled d-flex flex-row justify-content-center">
+              <li>
+                <a class="text-white px-2" href="#!">
+                  <i class="fab fa-facebook-square"></i>
+                </a>
+              </li>
+              <li>
+                <a class="text-white px-2" href="#!">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a class="text-white ps-2" href="#!">
+                  <i class="fab fa-youtube"></i>
+                </a>
+              </li>
+            </ul>
+  
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class=" mb-4">Reference</h5>
+  
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="fa-solid fa-link"></i>&nbsp;When your pet is missing</a>
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="fa-solid fa-link"></i>&nbsp;Recently found</a>
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="fa-solid fa-link"></i>&nbsp;How to adopt?</a>
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"></a><i class="fa-solid fa-link"></i>&nbsp;Pets for adoption</a>
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="fa-solid fa-link"></i>&nbsp;Material gifts</a>
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="fa-solid fa-link"></i>&nbsp;Help with walks</a>
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="fa-solid fa-link"></i>&nbsp;Volunteer activities</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4">Data</h5>
+  
+            <ul class="list-unstyled">
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="fa-solid fa-database"></i>&nbsp;General information</a>
+              </li>
+              <li class="mb-2">
+                
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="fa-solid fa-database"></i>&nbsp;About the shelter</a>
+              </li>
+              <li class="mb-2">
+                
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="fa-solid fa-database"></i>&nbsp;Statistic data</a>
+              </li>
+              <li class="mb-2">
+                
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="fa-solid fa-database"></i>&nbsp;Job</a>
+              </li>
+              <li class="mb-2">
+                
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="fa-solid fa-database"></i>&nbsp;Tenders</a>
+              </li>
+              <li class="mb-2">
+                
+              </li>
+              <li class="mb-2">
+                <a href="#!" class="text-white"><i class="fa-solid fa-database"></i>&nbsp;Contact</a>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+  
+          <!--Grid column-->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4">Contact</h5>
+  
+            <ul class="list-unstyled">
+              <li>
+                <p><i class="fa-solid fa-location-dot"></i>&nbsp;Frontier, Seoul Gongneug, Korea</p>
+              </li>
+              <li class="mb-2">
+                
+              </li>
+              <li>
+                <p><i class="fas fa-phone pe-2"></i>&nbsp;+ 02 123 567 89</p>
+              </li>
+              <li class="mb-2">
+                
+              </li>
+              <li>
+                <p><i class="fas fa-envelope pe-2 mb-0"></i>&nbsp;test@test.com</p>
+              </li>
+            </ul>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </div>
+      <!-- Grid container -->
+  
+      <!-- Copyright -->
+      <!--<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      </div>-->
+      <!-- Copyright -->
+    </footer>
+    </div>
+
+  
+
+  <!-- End of .container -->

@@ -1,0 +1,2832 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} MadecaSSOL {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">MadecaSSOl Chart</h5>
+                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                        <li class="breadcrumb-item"><a href="javascript:">부산</a></li>
+                                        <li id="ssol-name" class="breadcrumb-item"><a href="javascript:">다발병 지역 기후 통계</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <!-- [ Morris Chart ] start -->
+                                <div class="col-xl-6">
+                                    <div class="card" style="display: flex; width: 100%;">
+                                        <div id="chart-stacked-line1" class="card-block">
+                                            <div d="morris-bar-stacked-chart1" style="height:300px; flex: 1; width: 50%; float: left;"></div>
+                                            <div id="morris-bar-stacked-chart2" style="height:300px; flex: 1; width: 50%; float: right;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="card" style="display: flex; width: 100%;">
+                                        <div id="chart-stacked-line2" class="card-block">
+                                            <div d="morris-bar-stacked-chart3" style="height:300px; flex: 1; width: 50%; float: left;"></div>
+                                            <div id="morris-bar-stacked-chart4" style="height:300px; flex: 1; width: 50%; float: right;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="card" style="display: flex; width: 100%;">
+                                        <div id="chart-stacked-line3" class="card-block">
+                                            <div d="morris-bar-stacked-chart5" style="height:300px; flex: 1; width: 50%; float: left;"></div>
+                                            <div id="morris-bar-stacked-chart6" style="height:300px; flex: 1; width: 50%; float: right;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="card" style="display: flex; width: 100%;">
+                                        <div id="chart-stacked-line4" class="card-block">
+                                            <div d="morris-bar-stacked-chart7" style="height:300px; flex: 1; width: 50%; float: left;"></div>
+                                            <div id="morris-bar-stacked-chart8" style="height:300px; flex: 1; width: 50%; float: right;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ]   <div class="col-xl-6">
+                                <div class="card" style="display: flex; width: 100%;">
+                                    <div id="chart-stacked-line5" class="card-block">
+                                        <div d="morris-bar-stacked-chart9" style="height:300px; flex: 1; width: 50%; float: left;"></div>
+                                        <div id="morris-bar-stacked-chart10" style="height:300px; flex: 1; width: 50%; float: right;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            ]   <div class="col-xl-6">
+                                <div class="card" style="display: flex; width: 100%;">
+                                    <div id="chart-date-line6" class="card-block">
+                                        <div d="morris-bar-stacked-chart1" style="height:300px; flex: 1; width: 50%; float: left;"></div>
+                                        <div id="morris-bar-stacked-chart2" style="height:300px; flex: 1; width: 50%; float: right;"></div>
+                                    </div>
+                                </div>
+                            </div>
+                                <div class="col-xl-6">
+                                    <div class="card" style="display: flex; width: 100%;">
+                                        <div id="chart-date-line7" class="card-block">
+                                            <div id="morris-line-smooth-chart13" style="height:300px; flex: 1; width: 50%; float: left;"></div>
+                                            <div id="morris-line-smooth-chart14" style="height:300px; flex: 1; width: 50%; float: right;"></div>
+                                        </div>   
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="card" style="display: flex; width: 100%;">
+                                        <div id="chart-date-line8" class="card-block">
+                                            <div id="morris-line-smooth-chart15" style="height:300px; flex: 1; width: 50%; float: left;"></div>
+                                            <div id="morris-line-smooth-chart16" style="height:300px; flex: 1; width: 50%; float: right;"></div>
+                                        </div>   
+                                    </div>
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="card" style="display: flex; width: 100%;">
+                                        <div id="chart-date-line9" class="card-block">
+                                            <div id="morris-line-smooth-chart17" style="height:300px; flex: 1; width: 50%; float: left;"></div>
+                                            <div id="morris-line-smooth-chart18" style="height:300px; flex: 1; width: 50%; float: right;"></div>
+                                        </div>   
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ Main Content ] end -->
+
+                            <div class="col-xl-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h5>세부 차트 정보</h5>
+                                        <span id="tablename" class="d-block m-t-5">임목지/무립목지</span>
+                                    </div>
+                                    <div class="card-block table-border-style">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th id="n01">임목지/무립목지/비산림 구분</th>
+                                                        <th id="n02">코드 번호</th>
+                                                        <th id="n03">발생 횟수</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th>1</th>
+                                                        <th id="n11">입목지</th>
+                                                        <th id="n12">1</th>
+                                                        <th id="n13">130416</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td id="n21">무입목지</td>
+                                                        <td id="n22">2</td>
+                                                        <td id="n23">602</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td id="n31">비산림</td>
+                                                        <td id="n32">0</td>
+                                                        <td id="n33">313</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+<script src="{{ config.ASSETS_ROOT }}/js/custom.js"></script>
+
+<script>
+
+var global_e = "";
+var flag = false;
+var cnt = 0;
+
+
+    $(document).ready(function() {
+        setTimeout(function() {
+    
+            let x = document.getElementById("ssol-name");  
+            let detail_selct = document.getElementById("local-detail-select") 
+        
+            var local = {'name': 'busan'}   
+            $.ajax({
+                type: 'POST',
+                url: 'stack_bug_occ',
+                async: false,
+                dataType: 'json',
+                contentType: 'application/json',
+                data: JSON.stringify(local),
+                success: function(response){
+            
+            var local_lower = local['name'].toLowerCase();
+            detail_selct.innerText=enChange[local_lower] + ' 선택';
+            alert("test1234")
+            resetgraph();
+            Morris.Bar({
+        element: 'morris-bar-stacked-chart',
+        data: [{
+                y: '2005',
+                a: 50,
+                b: 40,
+                c: 35,
+            },
+            {
+                y: '2009',
+                a: 75,
+                b: 65,
+                c: 60,
+            },
+            {
+                y: '2010',
+                a: 50,
+                b: 40,
+                c: 55,
+            },
+            {
+                y: '2011',
+                a: 75,
+                b: 65,
+                c: 85,
+            },
+            {
+                y: '2012',
+                a: 100,
+                b: 90,
+                c: 40,
+            }
+        ],
+        xkey: 'y',
+        stacked: true,
+        barSizeRatio: 0.50,
+        barGap: 3,
+        resize: true,
+        responsive:true,
+        ykeys: ['a', 'b', 'c'],
+        labels: ['Bar 1', 'Bar 2', 'Bar 3'],
+        barColors: ["0-#1de9b6-#1dc4e9", "0-#899FD4-#A389D4", "#04a9f5"]
+     });
+        Morris.Line({
+        element: "morris-line-smooth-chart1",
+        data: [             
+            {
+                m: 1,
+                a: response['ASOS_STATION'][0]['CSS_AVG_01'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_01']
+            },
+            {
+                m: 2,
+                a: response['ASOS_STATION'][0]['CSS_AVG_02'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_02']
+            },
+            {
+                m: 3,
+                a: response['ASOS_STATION'][0]['CSS_AVG_03'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_03']
+            },
+            {
+                m: 201204,
+                a: response['ASOS_STATION'][0]['CSS_AVG_04'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_04']
+            },
+            {
+                m: 201205,
+                a: response['ASOS_STATION'][0]['CSS_AVG_05'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_05']
+            },
+            {
+                m: 201206,
+                a: response['ASOS_STATION'][0]['CSS_AVG_06'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_06']
+            },
+            {
+                m: 201207,
+                a: response['ASOS_STATION'][0]['CSS_AVG_07'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_07']
+            },
+            {
+                m: 201208,
+                a: response['ASOS_STATION'][0]['CSS_AVG_08'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_08']
+            },
+            {
+                m: 201209,
+                a: response['ASOS_STATION'][0]['CSS_AVG_09'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_09']
+            },
+            {
+                m: 201210,
+                a: response['ASOS_STATION'][0]['CSS_AVG_10'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_10']
+            },
+            {
+                m: 201211,
+                a: response['ASOS_STATION'][0]['CSS_AVG_11'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_11']
+            },
+            {
+                m: 201212,
+                a: response['ASOS_STATION'][0]['CSS_AVG_12'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_12']
+            }
+        ],
+        xkey: 'm',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['최다발생 평균 기온', '최소발생 평균 기온'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart2',
+        data: [           
+            {
+                y: '1',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_01'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_02'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_03'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_04'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_05'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_06'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_07'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_08'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_09'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_10'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_11'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_12'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_12']
+            }
+        ]
+        ,
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['최다 발생 최저 기온 평균', '최저 발생 최저 기온 평균'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart3',
+        data: [
+        {
+                y: '1',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_01'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_02'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_03'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_04'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_05'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_06'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_07'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_08'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_09'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_10'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_11'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_12'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart4',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_01'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_02'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_03'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_04'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_05'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_06'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_07'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_08'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_09'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_10'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_11'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_12'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart5',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_01'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_02'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_03'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_04'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_05'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_06'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_07'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_08'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_09'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_10'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_11'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_12'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+
+    Morris.Line({
+        element: 'morris-line-smooth-chart6',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_01'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_02'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_03'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_04'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_05'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_06'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_07'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_08'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_09'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_10'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_11'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_12'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+
+    Morris.Line({
+        element: 'morris-line-smooth-chart7',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_01'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_02'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_03'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_04'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_05'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_06'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_07'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_08'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_09'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_10'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_11'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_12'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+
+    Morris.Line({
+        element: 'morris-line-smooth-chart8',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_01'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_02'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_03'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_04'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_05'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_06'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_07'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_08'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_09'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_10'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_11'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_12'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart9',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_01'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_02'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_03'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_04'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_05'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_06'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_07'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_08'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_09'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_10'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_11'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_12'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart10',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_01'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_02'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_03'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_04'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_05'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_06'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_07'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_08'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_09'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_10'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_11'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_12'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart11',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_01'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_02'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_03'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_04'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_05'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_06'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_07'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_08'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_09'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_10'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_11'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_12'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart12',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_01'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_02'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_03'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_04'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_05'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_06'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_07'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_08'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_09'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_10'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_11'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_12'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart13',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_01'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_02'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_03'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_04'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_05'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_06'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_07'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_08'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_09'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_10'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_11'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_12'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart14',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['PDOS_HR_01'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['PDOS_HR_02'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['PDOS_HR_03'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['PDOS_HR_04'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['PDOS_HR_05'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['PDOS_HR_06'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['PDOS_HR_07'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['PDOS_HR_08'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['PDOS_HR_09'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['PDOS_HR_10'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['PDOS_HR_11'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['PDOS_HR_12'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart15',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_01'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_02'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_03'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_04'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_05'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_06'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_07'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_08'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_09'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_10'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_11'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_12'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart16',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['RF_AVG_01'],
+                b: response['ASOS_STATION'][1]['RF_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['RF_AVG_02'],
+                b: response['ASOS_STATION'][1]['RF_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['RF_AVG_03'],
+                b: response['ASOS_STATION'][1]['RF_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['RF_AVG_04'],
+                b: response['ASOS_STATION'][1]['RF_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['RF_AVG_05'],
+                b: response['ASOS_STATION'][1]['RF_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['RF_AVG_06'],
+                b: response['ASOS_STATION'][1]['RF_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['RF_AVG_07'],
+                b: response['ASOS_STATION'][1]['RF_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['RF_AVG_08'],
+                b: response['ASOS_STATION'][1]['RF_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['RF_AVG_09'],
+                b: response['ASOS_STATION'][1]['RF_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['RF_AVG_10'],
+                b: response['ASOS_STATION'][1]['RF_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['RF_AVG_11'],
+                b: response['ASOS_STATION'][1]['RF_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['RF_AVG_12'],
+                b: response['ASOS_STATION'][1]['RF_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+
+
+                   }
+        
+});
+        }, 100);
+    });
+
+function navSelectChart(elementId){
+    var innerText = document.getElementById(elementId).innerText;
+    let x = document.getElementById("ssol-name");  
+    let detail_selct = document.getElementById("local-detail-select") 
+    
+    cnt += 1;
+    var local = {'name': krChange[innerText]}   
+    $.ajax({
+        type: 'POST',
+        url: 'date_bug_occ',
+        async: false,
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(local),
+        success: function(response){
+            
+            var local_lower = response['localName'].toLowerCase();
+            detail_selct.innerText=enChange[local_lower] + ' 선택';
+
+            resetgraph();
+        
+        Morris.Line({
+        element: 'morris-line-smooth-chart1',
+        data: [             
+            {
+                y: '1',
+                a: response['ASOS_STATION'][0]['CSS_AVG_01'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['CSS_AVG_02'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['CSS_AVG_03'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['CSS_AVG_04'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['CSS_AVG_05'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['CSS_AVG_06'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['CSS_AVG_07'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['CSS_AVG_08'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['CSS_AVG_09'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['CSS_AVG_10'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['CSS_AVG_11'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['CSS_AVG_12'],
+                b: response['ASOS_STATION'][1]['CSS_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['최다발생 평균 기온', '최소발생 평균 기온'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart2',
+        data: [           
+            {
+                y: '1',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_01'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_02'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_03'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_04'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_05'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_06'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_07'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_08'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_09'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_10'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_11'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MIN_CSS_AVG_12'],
+                b: response['ASOS_STATION'][1]['MIN_CSS_AVG_12']
+            }
+        ]
+        ,
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['최다 발생 최저 기온 평균', '최저 발생 최저 기온 평균'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart3',
+        data: [
+        {
+                y: '1',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_01'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_02'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_03'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_04'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_05'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_06'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_07'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_08'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_09'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_10'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_11'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MAX_CSS_AVG_12'],
+                b: response['ASOS_STATION'][1]['MAX_CSS_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart4',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_01'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_02'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_03'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_04'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_05'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_06'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_07'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_08'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_09'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_10'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_11'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MAX_IWS_DEG_12'],
+                b: response['ASOS_STATION'][1]['MAX_IWS_DEG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart5',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_01'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_02'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_03'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_04'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_05'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_06'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_07'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_08'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_09'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_10'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_11'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MAX_WS_MS_12'],
+                b: response['ASOS_STATION'][1]['MAX_WS_MS_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+
+    Morris.Line({
+        element: 'morris-line-smooth-chart6',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_01'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_02'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_03'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_04'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_05'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_06'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_07'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_08'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_09'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_10'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_11'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MAX_WS_DEG_12'],
+                b: response['ASOS_STATION'][1]['MAX_WS_DEG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+
+    Morris.Line({
+        element: 'morris-line-smooth-chart7',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_01'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_02'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_03'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_04'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_05'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_06'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_07'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_08'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_09'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_10'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_11'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['WS_AVG_MS_12'],
+                b: response['ASOS_STATION'][1]['WS_AVG_MS_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+
+    Morris.Line({
+        element: 'morris-line-smooth-chart8',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_01'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_02'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_03'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_04'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_05'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_06'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_07'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_08'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_09'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_10'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_11'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MAX_WO_DEG_12'],
+                b: response['ASOS_STATION'][1]['MAX_WO_DEG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart9',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_01'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_02'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_03'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_04'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_05'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_06'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_07'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_08'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_09'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_10'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_11'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['CSS_DEW_AVG_12'],
+                b: response['ASOS_STATION'][1]['CSS_DEW_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart10',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_01'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_02'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_03'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_04'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_05'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_06'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_07'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_08'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_09'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_10'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_11'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['MIN_REL_HUMID_12'],
+                b: response['ASOS_STATION'][1]['MIN_REL_HUMID_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart11',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_01'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_02'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_03'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_04'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_05'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_06'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_07'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_08'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_09'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_10'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_11'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['REL_HUMID_AVG_12'],
+                b: response['ASOS_STATION'][1]['REL_HUMID_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart12',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_01'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_02'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_03'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_04'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_05'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_06'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_07'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_08'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_09'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_10'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_11'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['VAPOR_AVG_12'],
+                b: response['ASOS_STATION'][1]['VAPOR_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart13',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_01'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_02'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_03'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_04'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_05'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_06'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_07'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_08'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_09'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_10'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_11'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['VAPOR_LOCAL_AVG_12'],
+                b: response['ASOS_STATION'][1]['VAPOR_LOCAL_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart14',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['PDOS_HR_01'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['PDOS_HR_02'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['PDOS_HR_03'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['PDOS_HR_04'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['PDOS_HR_05'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['PDOS_HR_06'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['PDOS_HR_07'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['PDOS_HR_08'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['PDOS_HR_09'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['PDOS_HR_10'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['PDOS_HR_11'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['PDOS_HR_12'],
+                b: response['ASOS_STATION'][1]['PDOS_HR_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart15',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_01'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_02'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_03'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_04'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_05'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_06'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_07'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_08'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_09'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_10'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_11'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['CSS_GRD_AVG_12'],
+                b: response['ASOS_STATION'][1]['CSS_GRD_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+    Morris.Line({
+        element: 'morris-line-smooth-chart16',
+        data: [{
+                y: '1',
+                a: response['ASOS_STATION'][0]['RF_AVG_01'],
+                b: response['ASOS_STATION'][1]['RF_AVG_01']
+            },
+            {
+                y: '2',
+                a: response['ASOS_STATION'][0]['RF_AVG_02'],
+                b: response['ASOS_STATION'][1]['RF_AVG_02']
+            },
+            {
+                y: '3',
+                a: response['ASOS_STATION'][0]['RF_AVG_03'],
+                b: response['ASOS_STATION'][1]['RF_AVG_03']
+            },
+            {
+                y: '4',
+                a: response['ASOS_STATION'][0]['RF_AVG_04'],
+                b: response['ASOS_STATION'][1]['RF_AVG_04']
+            },
+            {
+                y: '5',
+                a: response['ASOS_STATION'][0]['RF_AVG_05'],
+                b: response['ASOS_STATION'][1]['RF_AVG_05']
+            },
+            {
+                y: '6',
+                a: response['ASOS_STATION'][0]['RF_AVG_06'],
+                b: response['ASOS_STATION'][1]['RF_AVG_06']
+            },
+            {
+                y: '7',
+                a: response['ASOS_STATION'][0]['RF_AVG_07'],
+                b: response['ASOS_STATION'][1]['RF_AVG_07']
+            },
+            {
+                y: '8',
+                a: response['ASOS_STATION'][0]['RF_AVG_08'],
+                b: response['ASOS_STATION'][1]['RF_AVG_08']
+            },
+            {
+                y: '9',
+                a: response['ASOS_STATION'][0]['RF_AVG_09'],
+                b: response['ASOS_STATION'][1]['RF_AVG_09']
+            },
+            {
+                y: '10',
+                a: response['ASOS_STATION'][0]['RF_AVG_10'],
+                b: response['ASOS_STATION'][1]['RF_AVG_10']
+            },
+            {
+                y: '11',
+                a: response['ASOS_STATION'][0]['RF_AVG_11'],
+                b: response['ASOS_STATION'][1]['RF_AVG_11']
+            },
+            {
+                y: '12',
+                a: response['ASOS_STATION'][0]['RF_AVG_12'],
+                b: response['ASOS_STATION'][1]['RF_AVG_12']
+            }
+        ],
+        xkey: 'y',
+        redraw: true,
+        resize: true,
+        ykeys: ['a', 'b'],
+        hideHover: 'auto',
+        responsive:true,
+        labels: ['Series A', 'Series B'],
+        lineColors: ['#1de9b6', '#A389D4']
+    });
+
+
+                   }
+        
+});
+    };
+
+
+var resetgraph = function(){
+        $('#morris-line-smooth-chart1').remove(); // this is my <canvas> element
+        $('#morris-line-smooth-chart2').remove();
+        $('#chart-date-line1').append(' <div id="morris-line-smooth-chart1" style="height:300px; flex: 1; width: 50%; float: left;" onclick="fnc_table1()" ></div>');
+        $('#chart-date-line1').append(' <div id="morris-line-smooth-chart2" style="height:300px; flex: 1; width: 50%; float: right;" onclick="fnc_table2()"></div>');
+        
+        $('#morris-line-smooth-chart3').remove(); // this is my <canvas> element
+        $('#morris-line-smooth-chart4').remove();        
+        $('#chart-date-line2').append(' <div id="morris-line-smooth-chart3" style="height:300px; flex: 1; width: 50%; float: left;" onclick="fnc_table3()" ></div>');
+        $('#chart-date-line2').append(' <div id="morris-line-smooth-chart4" style="height:300px; flex: 1; width: 50%; float: right;" onclick="fnc_table4()"></div>');
+
+        $('#morris-line-smooth-chart5').remove(); // this is my <canvas> element
+        $('#morris-line-smooth-chart6').remove(); // this is my <canvas> element
+        $('#chart-date-line3').append(' <div id="morris-line-smooth-chart5" style="height:300px; flex: 1; width: 50%; float: left;" onclick="fnc_table5()"></div>');
+        $('#chart-date-line3').append(' <div id="morris-line-smooth-chart6" style="height:300px; flex: 1; width: 50%; float: right;" onclick="fnc_table6()"></div>');
+
+        $('#morris-line-smooth-chart7').remove(); // this is my <canvas> element
+        $('#morris-line-smooth-chart8').remove(); // this is my <canvas> element    
+        $('#chart-date-line4').append(' <div id="morris-line-smooth-chart7" style="height:300px; flex: 1; width: 50%; float: left;" onclick="fnc_table7()"></div>');
+        $('#chart-date-line4').append(' <div id="morris-line-smooth-chart8" style="height:300px; flex: 1; width: 50%; float: right;" onclick="fnc_table8()"></div>');
+
+        $('#morris-line-smooth-chart9').remove(); // this is my <canvas> element
+        $('#morris-line-smooth-chart10').remove(); // this is my <canvas> element    
+        $('#chart-date-line5').append(' <div id="morris-line-smooth-chart9" style="height:300px; flex: 1; width: 50%; float: left;" onclick="fnc_table7()"></div>');
+        $('#chart-date-line5').append(' <div id="morris-line-smooth-chart10" style="height:300px; flex: 1; width: 50%; float: right;" onclick="fnc_table8()"></div>');
+        
+        $('#morris-line-smooth-chart11').remove(); // this is my <canvas> element
+        $('#morris-line-smooth-chart12').remove(); // this is my <canvas> element    
+        $('#chart-date-line6').append(' <div id="morris-line-smooth-chart11" style="height:300px; flex: 1; width: 50%; float: left;" onclick="fnc_table7()"></div>');
+        $('#chart-date-line6').append(' <div id="morris-line-smooth-chart12" style="height:300px; flex: 1; width: 50%; float: right;" onclick="fnc_table8()"></div>');
+        
+        $('#morris-line-smooth-chart13').remove(); // this is my <canvas> element
+        $('#morris-line-smooth-chart14').remove(); // this is my <canvas> element    
+        $('#chart-date-line7').append(' <div id="morris-line-smooth-chart13" style="height:300px; flex: 1; width: 50%; float: left;" onclick="fnc_table7()"></div>');
+        $('#chart-date-line7').append(' <div id="morris-line-smooth-chart14" style="height:300px; flex: 1; width: 50%; float: right;" onclick="fnc_table8()"></div>');
+        
+        $('#morris-line-smooth-chart15').remove(); // this is my <canvas> element
+        $('#morris-line-smooth-chart16').remove(); // this is my <canvas> element    
+        $('#chart-date-line8').append(' <div id="morris-line-smooth-chart15" style="height:300px; flex: 1; width: 50%; float: left;" onclick="fnc_table7()"></div>');
+        $('#chart-date-line8').append(' <div id="morris-line-smooth-chart16" style="height:300px; flex: 1; width: 50%; float: right;" onclick="fnc_table8()"></div>');
+    };
+
+
+// function fnc_table1(){
+//     if (flag == true){
+//     x1.innerText="입목지/무립목지";
+    
+//     x2.innerText="임목지/무립목지/비산림 구분";
+//     x3.innerText="코드 번호";
+//     x4.innerText="발생 횟수";
+    
+//     x5.innerText = storunst[String(y1[0][0])];
+//     x6.innerText= y1[0][0];
+//     x7.innerText= y1[0][1];
+
+//     x8.innerText = storunst[String(y1[1][0])];
+//     x9.innerText= y1[1][0];
+//     x10.innerText= y1[1][1];
+    
+//     x11.innerText = storunst[String(y1[2][0])];
+//     x12.innerText= y1[2][0];
+//     x13.innerText= y1[2][1];
+//     alert('test');
+// }
+// }  
+
+// function fnc_table2(){
+//     if (flag == true){
+//     x1.innerText="임종";
+    
+//     x2.innerText="인공림/천연림/무립목지,비산림 구분";
+//     x3.innerText="코드 번호";
+//     x4.innerText="발생 횟수";
+    
+//     x5.innerText = fror[String(y2[0][0])];
+//     x6.innerText= y2[0][0];
+//     x7.innerText= y2[0][1];
+
+//     x8.innerText = fror[String(y2[1][0])];
+//     x9.innerText= y2[1][0];
+//     x10.innerText= y2[1][1];
+    
+//     x11.innerText = fror[String(y2[2][0])];
+//     x12.innerText= y2[2][0];
+//     x13.innerText= y2[2][1];
+//     alert('test');
+// }
+// }  
+
+// function fnc_table3(){
+//     if (flag == true){
+//     x1.innerText="임상";
+    
+//     x2.innerText="침엽수림/활엽수림/혼효림 등 구분";
+//     x3.innerText="코드 번호";
+//     x4.innerText="발생 횟수";
+    
+//     x5.innerText = frtp[String(y3[0][0])];
+//     x6.innerText= y3[0][0];
+//     x7.innerText= y3[0][1];
+
+//     x8.innerText = frtp[String(y3[1][0])];
+//     x9.innerText= y3[1][0];
+//     x10.innerText= y3[1][1];
+    
+//     x11.innerText = frtp[String(y3[2][0])];
+//     x12.innerText= y3[2][0];
+//     x13.innerText= y3[2][1];
+//     alert('test');
+// }
+// }  
+
+// function fnc_table4(){
+//     if (flag == true){
+//     x1.innerText="수종";
+    
+//     x2.innerText="수종그룹 구분";
+//     x3.innerText="코드 번호";
+//     x4.innerText="발생 횟수";
+    
+//     x5.innerText = koftr[String(y4[0][0])];
+//     x6.innerText= y4[0][0];
+//     x7.innerText= y4[0][1];
+
+//     x8.innerText = koftr[String(y4[1][0])];
+//     x9.innerText= y4[1][0];
+//     x10.innerText= y4[1][1];
+    
+//     x11.innerText = koftr[String(y4[2][0])];
+//     x12.innerText= y4[2][0];
+//     x13.innerText= y4[2][1];
+//     alert('test');
+// }
+// }  
+
+// function fnc_table5(){
+//     if (flag == true){
+//     x1.innerText="경급";
+    
+//     x2.innerText="경급 구분";
+//     x3.innerText="코드 번호";
+//     x4.innerText="발생 횟수";
+    
+//     x5.innerText = dmcls[String(y5[0][0])];
+//     x6.innerText= y5[0][0];
+//     x7.innerText= y5[0][1];
+
+//     x8.innerText = dmcls[String(y5[1][0])];
+//     x9.innerText= y5[1][0];
+//     x10.innerText= y5[1][1];
+    
+//     x11.innerText = dmcls[String(y5[2][0])];
+//     x12.innerText= y5[2][0];
+//     x13.innerText= y5[2][1];
+//     alert('test');
+// }
+// }  
+
+
+// function fnc_table6(){
+//     if (flag == true){
+//     x1.innerText="영급";
+    
+//     x2.innerText="영급 구분";
+//     x3.innerText="코드 번호";
+//     x4.innerText="발생 횟수";
+    
+//     x5.innerText = agcls[String(y6[0][0])];
+//     x6.innerText= y6[0][0];
+//     x7.innerText= y6[0][1];
+
+//     x8.innerText = agcls[String(y6[1][0])];
+//     x9.innerText= y6[1][0];
+//     x10.innerText= y6[1][1];
+    
+//     x11.innerText = agcls[String(y6[2][0])];
+//     x12.innerText= y6[2][0];
+//     x13.innerText= y6[2][1];
+//     alert('test');
+// }
+// }  
+
+// function fnc_table7(){
+//     if (flag == true){
+//     x1.innerText="밀도";
+    
+//     x2.innerText="밀도 구분";
+//     x3.innerText="코드 번호";
+//     x4.innerText="발생 횟수";
+    
+//     x5.innerText = dnst[String(y7[0][0])];
+//     x6.innerText= y7[0][0];
+//     x7.innerText= y7[0][1];
+
+//     x8.innerText = dnst[String(y7[1][0])];
+//     x9.innerText= y7[1][0];
+//     x10.innerText= y7[1][1];
+    
+//     x11.innerText = dnst[String(y7[2][0])];
+//     x12.innerText= y7[2][0];
+//     x13.innerText= y7[2][1];
+//     alert('test');
+// }
+// }  
+
+// function fnc_table8(){
+//     if (flag == true){
+//     x1.innerText="임분고";
+    
+//     x2.innerText="임분고 구분";
+//     x3.innerText="코드 번호";
+//     x4.innerText="발생 횟수";
+    
+//     x5.innerText = height[String(y8[0][0])];
+//     x6.innerText= y8[0][0];
+//     x7.innerText= y8[0][1];
+
+//     x8.innerText = height[String(y8[1][0])];
+//     x9.innerText= y8[1][0];
+//     x10.innerText= y8[1][1];
+    
+//     x11.innerText = height[String(y8[2][0])];
+//     x12.innerText= y8[2][0];
+//     x13.innerText= y8[2][1];
+//     alert('test');
+// }
+// }  
+
+
+</script>
+
+
+
+
+
+
+{% endblock javascripts %}

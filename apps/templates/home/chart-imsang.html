@@ -1,0 +1,710 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} MadecaSSOL {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pcoded-main-container">
+        <div class="pcoded-wrapper">
+            <div class="pcoded-content">
+                <div class="pcoded-inner-content">
+                    <!-- [ breadcrumb ] start -->
+                    <div class="page-header">
+                        <div class="page-block">
+                            <div class="row align-items-center">
+                                <div class="col-md-12">
+                                    <div class="page-header-title">
+                                        <h5 class="m-b-10">MadecaSSOl Chart</h5>
+                                    </div>
+                                    <ul class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                        <li id="region-name" class="breadcrumb-item"><a href="javascript:">부산광역시</a></li>
+                                        <li id="ssol-name" class="breadcrumb-item"><a href="javascript:">소나무재선충 다발생 임상도 차트</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- [ breadcrumb ] end -->
+                    <div class="main-body">
+                        <div class="page-wrapper">
+                            <!-- [ Main Content ] start -->
+                            <div class="row">
+                                <!-- [ Morris Chart ] start -->
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;">
+                                        <div id="chart-main-bar1" class="card-block" style="height: 430px;">
+                                            <div id="morris-bar-chart1" style="height:300px; flex: 1; width: 50%; float: left;"></div>
+                                            <div id="morris-bar-chart2" style="height:300px; flex: 1; width: 50%; float: right;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;">
+                                        <div id="chart-main-bar2" class="card-block" style="height: 430px;">
+                                            <div id="morris-bar-chart3" style="height:300px; flex: 1; width: 50%; float: left;"></div>
+                                            <div id="morris-bar-chart4" style="height:300px; flex: 1; width: 50%; float: right;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;">
+                                        <div id="chart-main-bar3" class="card-block" style="height: 430px;">
+                                            <div id="morris-bar-chart5" style="height:300px; flex: 1; width: 50%; float: left;"></div>
+                                            <div id="morris-bar-chart6" style="height:300px; flex: 1; width: 50%; float: right;"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6" data-toggle="modal" data-target="#myModal">
+                                    <div class="card" style="display: flex; width: 100%;">
+                                        <div id="chart-main-bar4" class="card-block" style="height: 430px;">
+                                            <div id="morris-bar-chart7" style="height:300px; flex: 1; width: 50%; float: left;"></div>
+                                            <div id="morris-bar-chart8" style="height:300px; flex: 1; width: 50%; float: right;"></div>
+                                        </div>   
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- [ Main Content ] end -->
+                            <!-- Trigger the modal with a button -->
+
+                            <!-- Modal -->
+                            <div id="myModal" class="modal fade" role="dialog">
+                            <div class="modal-dialog">
+
+                                <!-- Modal content-->
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="col-xl-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <h5>세부 차트 정보</h5>
+                                                <span id="tablename" class="d-block m-t-5">임목지/무립목지</span>
+                                            </div>
+                                            <div class="card-block table-border-style">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead>
+                                                            <tr>
+                                                                <th>#</th>
+                                                                <th id="n01">임목지/무립목지/비산림 구분</th>
+                                                                <th id="n02">코드 번호</th>
+                                                                <th id="n03">발생 횟수</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <th>1</th>
+                                                                <th id="n11">입목지</th>
+                                                                <th id="n12">1</th>
+                                                                <th id="n13">130416</th>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">2</th>
+                                                                <td id="n21">무입목지</td>
+                                                                <td id="n22">2</td>
+                                                                <td id="n23">602</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <th scope="row">3</th>
+                                                                <td id="n31">비산림</td>
+                                                                <td id="n32">0</td>
+                                                                <td id="n33">313</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                </div>
+                                </div>
+
+                            </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <!-- [ Main Content ] end -->
+
+{% include "home/footer.html" %}
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+<script src="{{ config.ASSETS_ROOT }}/js/custom.js"></script>
+
+<script>
+var flag = false;
+
+var x1 = document.getElementById("tablename");
+var x2 = document.getElementById("n01");
+var x3 = document.getElementById("n02");
+var x4 = document.getElementById("n03");
+var x5 = document.getElementById("n11");
+var x6 = document.getElementById("n12");
+var x7 = document.getElementById("n13");
+var x8 = document.getElementById("n21");
+var x9 = document.getElementById("n22");
+var x10 = document.getElementById("n23");
+var x11 = document.getElementById("n31");
+var x12 = document.getElementById("n32");
+var x13 = document.getElementById("n33");
+
+
+var t0n0, t0n1, t1n0, t1n1, t2n0, t2n1, t3n0, t3n1;
+
+var y1, y2, y3, y4, y5, y6, y7, y8;
+
+var bar_size = 0.7;
+
+$(document).ready(function() {
+
+    let x = document.getElementById("ssol-name");
+    let detail_selct = document.getElementById("local-detail-select");
+    var local = {
+        'name': 'busan'
+    };
+    var flag_f, t00, t01, t10, t11, t20, t21, t30, t31;
+
+    $.ajax({
+        type: 'POST',
+        url: 'imsang_bug_occ',
+        async: false,
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(local),
+        success: function(response) {
+            var local_lower = response['localName'].toLowerCase();
+            detail_selct.innerText = enChange[local_lower] + ' 선택';
+            resetgraph();
+            flag_f = true;
+
+
+            t010 = morris_imsang_call(response);
+            t01 = t0n1;
+            t10 = t1n0;
+            t11 = t1n1;
+            t20 = t2n0;
+            t21 = t2n1;
+            t30 = t3n0;
+            t31 = t3n1;
+
+        }
+    })
+    y1 = t010;
+    y2 = t01;
+    y3 = t10;
+    y4 = t11;
+    y5 = t20;
+    y6 = t21;
+    y7 = t30;
+    y8 = t31;
+    flag = flag_f;
+});
+
+
+function navSelectChart(elementId) {
+    var innerText = document.getElementById(elementId).innerText;
+    let x = document.getElementById("ssol-name");
+    let detail_selct = document.getElementById("local-detail-select");
+    let detail_region_name = document.getElementById("region-name");
+
+    var flag_f, t00, t01, t10, t11, t20, t21, t30, t31;
+
+    var local = {
+        'name': krChange[innerText]
+    };
+    $.ajax({
+        type: 'POST',
+        url: 'imsang_bug_occ',
+        async: false,
+        dataType: 'json',
+        contentType: 'application/json',
+        data: JSON.stringify(local),
+        success: function(response) {
+            var local_lower = response['localName'].toLowerCase();
+            detail_selct.innerText = enChange[local_lower] + ' 선택';
+            detail_region_name.innerText = enChange[local_lower]
+            detail_region_name.style.color = "black"
+            resetgraph();
+            flag_f = true;
+
+
+            t010 = morris_imsang_call(response);
+            t01 = t0n1;
+            t10 = t1n0;
+            t11 = t1n1;
+            t20 = t2n0;
+            t21 = t2n1;
+            t30 = t3n0;
+            t31 = t3n1;
+
+        }
+    })
+    y1 = t010;
+    y2 = t01;
+    y3 = t10;
+    y4 = t11;
+    y5 = t20;
+    y6 = t21;
+    y7 = t30;
+    y8 = t31;
+    flag = flag_f;
+};
+
+
+function morris_imsang_call(response) {
+    t0n0 = [
+        [response['STORUNST'][0]['name'], response['STORUNST'][0]['value']],
+        [response['STORUNST'][1]['name'], response['STORUNST'][1]['value']],
+        [response['STORUNST'][2]['name'], response['STORUNST'][2]['value']]
+    ];
+
+    t0n1 = [
+        [response['FROR_CD'][0]['name'], response['FROR_CD'][0]['value']],
+        [response['FROR_CD'][1]['name'], response['FROR_CD'][1]['value']],
+        [response['FROR_CD'][2]['name'], response['FROR_CD'][2]['value']]
+    ];
+
+    t1n0 = [
+        [response['FRTP_CD'][0]['name'], response['FRTP_CD'][0]['value']],
+        [response['FRTP_CD'][1]['name'], response['FRTP_CD'][1]['value']],
+        [response['FRTP_CD'][2]['name'], response['FRTP_CD'][2]['value']]
+    ];
+
+    t1n1 = [
+        [response['KOFTR_GROU'][0]['name'], response['KOFTR_GROU'][0]['value']],
+        [response['KOFTR_GROU'][1]['name'], response['KOFTR_GROU'][1]['value']],
+        [response['KOFTR_GROU'][2]['name'], response['KOFTR_GROU'][2]['value']]
+    ];
+
+    t2n0 = [
+        [response['DMCLS_CD'][0]['name'], response['DMCLS_CD'][0]['value']],
+        [response['DMCLS_CD'][1]['name'], response['DMCLS_CD'][1]['value']],
+        [response['DMCLS_CD'][2]['name'], response['DMCLS_CD'][2]['value']]
+    ];
+
+    t2n1 = [
+        [response['AGCLS_CD'][0]['name'], response['AGCLS_CD'][0]['value']],
+        [response['AGCLS_CD'][1]['name'], response['AGCLS_CD'][1]['value']],
+        [response['AGCLS_CD'][2]['name'], response['AGCLS_CD'][2]['value']]
+    ];
+
+    t3n0 = [
+        [response['DNST_CD'][0]['name'], response['DNST_CD'][0]['value']],
+        [response['DNST_CD'][1]['name'], response['DNST_CD'][1]['value']],
+        [response['DNST_CD'][2]['name'], response['DNST_CD'][2]['value']]
+    ];
+
+    t3n1 = [
+        [response['HEIGHT'][0]['name'], response['HEIGHT'][0]['value']],
+        [response['HEIGHT'][1]['name'], response['HEIGHT'][1]['value']],
+        [response['HEIGHT'][2]['name'], response['HEIGHT'][2]['value']]
+    ];
+
+
+    // [ bar-simple ] chart start
+    Morris.Bar({
+        element: 'morris-bar-chart1',
+        data: [{
+            y: '입목지/무립목지 구분',
+            a: t0n0[0][1],
+            b: t0n0[1][1],
+            c: t0n0[2][1],
+        }],
+        xkey: 'y',
+        barSizeRatio: bar_size,
+        barGap: 3,
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#28C84E;'>임목지 : " + row.a + "</span><br><span style='color: #88D959'>무립목지 : " + row.b + "</span></b><br><b><span style='color: #164B2D'>미립목지 : " + row.c + "</span></b>"
+            return hover;
+        },
+        resize: true,
+        responsive: true,
+        ykeys: ['a', 'b', 'c'],
+        labels: [t0n0[0][0], t0n0[1][0], t0n0[2][0]],
+        barColors: ["#28C84E", "#88D959", "#164B2D"]
+    });
+    Morris.Bar({
+        element: 'morris-bar-chart2',
+        data: [{
+            y: '임종',
+            a: t0n1[0][1],
+            b: t0n1[1][1],
+            c: t0n1[2][1],
+        }],
+        xkey: 'y',
+        barSizeRatio: bar_size,
+        barGap: 3,
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#28C84E'>천연림 : " + row.a + "</span><br><span style='color: #88D959'>인공림 : " + row.b + "</span></b><br><b><span style='color: #164B2D'>무립목지/비산림 : " + row.c + "</span></b>"
+            return hover;
+        },
+        resize: true,
+        responsive: true,
+        ykeys: ['a', 'b', 'c'],
+        labels: [t0n1[0][0], t0n1[1][0], t0n1[2][0]],
+        barColors: ["#28C84E", "#88D959", "#164B2D"]
+    });
+    Morris.Bar({
+        element: 'morris-bar-chart3',
+        data: [{
+            y: '임상',
+            a: t1n0[0][1],
+            b: t1n0[1][1],
+            c: t1n0[2][1],
+        }],
+        xkey: 'y',
+        barSizeRatio: bar_size,
+        barGap: 3,
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#28C84E'>침엽수림 : " + row.a + "</span><br><span style='color: #88D959'>혼효림 : " + row.b + "</span></b><br><b><span style='color: #164B2D'>활엽수림 : " + row.c + "</span></b>"
+            return hover;
+        },
+        resize: true,
+        responsive: true,
+        ykeys: ['a', 'b', 'c'],
+        labels: [t1n0[0][0], t1n0[1][0], t1n0[2][0]],
+        barColors: ["#28C84E", "#88D959", "#164B2D"]
+    });
+    Morris.Bar({
+        element: 'morris-bar-chart4',
+        data: [{
+            y: '수종',
+            a: t1n1[0][1],
+            b: t1n1[1][1],
+            c: t1n1[2][1],
+        }],
+        xkey: 'y',
+        barSizeRatio: bar_size,
+        barGap: 3,
+        resize: true,
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#28C84E'>곰슬 : " + row.a + "</span><br><span style='color: #88D959'>소나무 : " + row.b + "</span></b><br><b><span style='color: #164B2D'>침활혼효림 : " + row.c + "</span></b>"
+            return hover;
+        },
+        responsive: true,
+        ykeys: ['a', 'b', 'c'],
+        labels: [t1n1[0][0], t1n1[1][0], t1n1[2][0]],
+        barColors: ["#28C84E", "#88D959", "#164B2D"]
+    });
+    Morris.Bar({
+        element: 'morris-bar-chart5',
+        data: [{
+            y: '경급',
+            a: t2n0[0][1],
+            b: t2n0[1][1],
+            c: t2n0[2][1],
+        }],
+        xkey: 'y',
+        barSizeRatio: bar_size,
+        barGap: 3,
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#28C84E'>중경목 : " + row.a + "</span><br><span style='color: #88D959'>대경목 : " + row.b + "</span></b><br><b><span style='color: #164B2D'>소경목 : " + row.c + "</span></b>"
+            return hover;
+        },
+        resize: true,
+        responsive: true,
+        ykeys: ['a', 'b', 'c'],
+        labels: [t2n0[0][0], t2n0[1][0], t2n0[2][0]],
+        barColors: ["#28C84E", "#88D959", "#164B2D"]
+    });
+    Morris.Bar({
+        element: 'morris-bar-chart6',
+        data: [{
+            y: '영급',
+            a: t2n1[0][1],
+            b: t2n1[1][1],
+            c: t2n1[2][1],
+        }],
+        xkey: 'y',
+        barSizeRatio: bar_size,
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#28C84E'>4영급 : " + row.a + "</span><br><span style='color: #88D959'>5영급 : " + row.b + "</span></b><br><b><span style='color: #164B2D'>3영급 : " + row.c + "</span></b>"
+            return hover;
+        },
+        resize: true,
+        responsive: true,
+        ykeys: ['a', 'b', 'c'],
+        labels: [t2n1[0][0], t2n1[1][0], t2n1[2][0]],
+        barColors: ["#28C84E", "#88D959", "#164B2D"]
+    });
+    Morris.Bar({
+        element: 'morris-bar-chart7',
+        data: [{
+            y: '수관밀도',
+            a: t3n0[0][1],
+            b: t3n0[1][1],
+            c: t3n0[2][1],
+        }],
+        xkey: 'y',
+        barSizeRatio: bar_size,
+        barGap: 3,
+        resize: true,
+        responsive: true,
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#28C84E ; font-size:13px;'>교목의 수관점유 면적이 71% 이상인 임분 (밀) : " + row.a + "</span><br><span style='color: #88D959 ; font-size:13px;'>교목의 수관점유 면적이 51% ~ 70% 이하인 임분 (중) : " + row.b + "</span></b><br><b><span style='color: #164B2D; font-size:13px;'>교목의 수관점유 면적이 50% 이하인 임분 (소) : " + row.c + "</span></b>"
+            return hover;
+        },
+        ykeys: ['a', 'b', 'c'],
+        labels: [t3n0[0][0], t3n0[1][0], t3n0[2][0]],
+        barColors: ["#28C84E", "#88D959", "#164B2D"]
+    });
+    Morris.Bar({
+        element: 'morris-bar-chart8',
+        data: [{
+            y: '임분고',
+            a: t3n1[0][1],
+            b: t3n1[1][1],
+            c: t3n1[2][1],
+        }],
+        xkey: 'y',
+        barSizeRatio: bar_size,
+        barGap: 3,
+        hideHover: 'auto',
+        hoverCallback: function(index, options, content, row) {
+            var hover = "<b><span style='color:#28C84E; '>임분고 15m 이상 17m 미만 : " + row.a + "</span><br><span style='color: #88D959 ; '>임분고 13m 이상 15m 미만 : " + row.b + "</span></b><br><b><span style='color: #164B2D ; '>임분고 17m 이상 19m 미만 : " + row.c + "</span></b>"
+            return hover;
+        },
+        resize: true,
+        responsive: true,
+        ykeys: ['a', 'b', 'c'],
+        labels: [t3n1[0][0], t3n1[1][0], t3n1[2][0]],
+        barColors: ["#28C84E", "#88D959", "#164B2D"]
+    });
+
+    return t0n0;
+}
+
+
+
+var resetgraph = function() {
+    $('#morris-bar-chart1').remove(); // this is my <canvas> element
+    $('#morris-bar-chart2').remove();
+    $('#chart-main-bar1').append(' <div id="morris-bar-chart1" href="#" data-toggle="modal" data-target="#myModal" style="height:300px; flex: 1; width: 50%; float: left;"" onclick="fnc_table1()" ></div>');
+    $('#chart-main-bar1').append(' <div id="morris-bar-chart2" style="height:300px; flex: 1; width: 50%; float: right;" onclick="fnc_table2()"> </div>');
+
+    $('#morris-bar-chart3').remove(); // this is my <canvas> element
+    $('#morris-bar-chart4').remove();
+    $('#chart-main-bar2').append(' <div id="morris-bar-chart3" style="height:300px; flex: 1; width: 50%; float: left;" onclick="fnc_table3()" ></div>');
+    $('#chart-main-bar2').append(' <div id="morris-bar-chart4" style="height:300px; flex: 1; width: 50%; float: right;" onclick="fnc_table4()"></div>');
+
+    $('#morris-bar-chart5').remove(); // this is my <canvas> element
+    $('#morris-bar-chart6').remove(); // this is my <canvas> element
+    $('#chart-main-bar3').append(' <div id="morris-bar-chart5" style="height:300px; flex: 1; width: 50%; float: left;" onclick="fnc_table5()"></div>');
+    $('#chart-main-bar3').append(' <div id="morris-bar-chart6" style="height:300px; flex: 1; width: 50%; float: right;" onclick="fnc_table6()"></div>');
+
+    $('#morris-bar-chart7').remove(); // this is my <canvas> element
+    $('#morris-bar-chart8').remove(); // this is my <canvas> element    
+    $('#chart-main-bar4').append(' <div id="morris-bar-chart7" style="height:300px; flex: 1; width: 50%; float: left;" onclick="fnc_table7()"></div>');
+    $('#chart-main-bar4').append(' <div id="morris-bar-chart8" style="height:300px; flex: 1; width: 50%; float: right;" onclick="fnc_table8()"></div>');
+
+};
+
+
+function fnc_table1() {
+    if (flag == true) {
+        x1.innerText = "입목지/무립목지";
+
+        x2.innerText = "임목지/무립목지/비산림 구분";
+        x3.innerText = "코드 번호";
+        x4.innerText = "발생 횟수";
+
+        x5.innerText = storunst[String(y1[0][0])];
+        x6.innerText = y1[0][0];
+        x7.innerText = y1[0][1];
+
+        x8.innerText = storunst[String(y1[1][0])];
+        x9.innerText = y1[1][0];
+        x10.innerText = y1[1][1];
+
+        x11.innerText = storunst[String(y1[2][0])];
+        x12.innerText = y1[2][0];
+        x13.innerText = y1[2][1];
+    }
+}
+
+function fnc_table2() {
+    if (flag == true) {
+        x1.innerText = "임종";
+
+        x2.innerText = "인공림/천연림/무립목지,비산림 구분";
+        x3.innerText = "코드 번호";
+        x4.innerText = "발생 횟수";
+
+        x5.innerText = fror[String(y2[0][0])];
+        x6.innerText = y2[0][0];
+        x7.innerText = y2[0][1];
+
+        x8.innerText = fror[String(y2[1][0])];
+        x9.innerText = y2[1][0];
+        x10.innerText = y2[1][1];
+
+        x11.innerText = fror[String(y2[2][0])];
+        x12.innerText = y2[2][0];
+        x13.innerText = y2[2][1];
+    }
+}
+
+function fnc_table3() {
+    if (flag == true) {
+        x1.innerText = "임상";
+
+        x2.innerText = "침엽수림/활엽수림/혼효림 등 구분";
+        x3.innerText = "코드 번호";
+        x4.innerText = "발생 횟수";
+
+        x5.innerText = frtp[String(y3[0][0])];
+        x6.innerText = y3[0][0];
+        x7.innerText = y3[0][1];
+
+        x8.innerText = frtp[String(y3[1][0])];
+        x9.innerText = y3[1][0];
+        x10.innerText = y3[1][1];
+
+        x11.innerText = frtp[String(y3[2][0])];
+        x12.innerText = y3[2][0];
+        x13.innerText = y3[2][1];
+    }
+}
+
+function fnc_table4() {
+    if (flag == true) {
+        x1.innerText = "수종";
+
+        x2.innerText = "수종그룹 구분";
+        x3.innerText = "코드 번호";
+        x4.innerText = "발생 횟수";
+
+        x5.innerText = koftr[String(y4[0][0])];
+        x6.innerText = y4[0][0];
+        x7.innerText = y4[0][1];
+
+        x8.innerText = koftr[String(y4[1][0])];
+        x9.innerText = y4[1][0];
+        x10.innerText = y4[1][1];
+
+        x11.innerText = koftr[String(y4[2][0])];
+        x12.innerText = y4[2][0];
+        x13.innerText = y4[2][1];
+    }
+}
+
+function fnc_table5() {
+    if (flag == true) {
+        x1.innerText = "경급";
+
+        x2.innerText = "경급 구분";
+        x3.innerText = "코드 번호";
+        x4.innerText = "발생 횟수";
+
+        x5.innerText = dmcls[String(y5[0][0])];
+        x6.innerText = y5[0][0];
+        x7.innerText = y5[0][1];
+
+        x8.innerText = dmcls[String(y5[1][0])];
+        x9.innerText = y5[1][0];
+        x10.innerText = y5[1][1];
+
+        x11.innerText = dmcls[String(y5[2][0])];
+        x12.innerText = y5[2][0];
+        x13.innerText = y5[2][1];
+    }
+}
+
+
+function fnc_table6() {
+    if (flag == true) {
+        x1.innerText = "영급";
+
+        x2.innerText = "영급 구분";
+        x3.innerText = "코드 번호";
+        x4.innerText = "발생 횟수";
+
+        x5.innerText = agcls[String(y6[0][0])];
+        x6.innerText = y6[0][0];
+        x7.innerText = y6[0][1];
+
+        x8.innerText = agcls[String(y6[1][0])];
+        x9.innerText = y6[1][0];
+        x10.innerText = y6[1][1];
+
+        x11.innerText = agcls[String(y6[2][0])];
+        x12.innerText = y6[2][0];
+        x13.innerText = y6[2][1];
+    }
+}
+
+function fnc_table7() {
+    if (flag == true) {
+        x1.innerText = "밀도";
+
+        x2.innerText = "밀도 구분";
+        x3.innerText = "코드 번호";
+        x4.innerText = "발생 횟수";
+
+        x5.innerText = dnst[String(y7[0][0])];
+        x6.innerText = y7[0][0];
+        x7.innerText = y7[0][1];
+
+        x8.innerText = dnst[String(y7[1][0])];
+        x9.innerText = y7[1][0];
+        x10.innerText = y7[1][1];
+
+        x11.innerText = dnst[String(y7[2][0])];
+        x12.innerText = y7[2][0];
+        x13.innerText = y7[2][1];
+    }
+}
+
+function fnc_table8() {
+    if (flag == true) {
+        x1.innerText = "임분고";
+
+        x2.innerText = "임분고 구분";
+        x3.innerText = "코드 번호";
+        x4.innerText = "발생 횟수";
+
+        x5.innerText = height[String(y8[0][0])];
+        x6.innerText = y8[0][0];
+        x7.innerText = y8[0][1];
+
+        x8.innerText = height[String(y8[1][0])];
+        x9.innerText = y8[1][0];
+        x10.innerText = y8[1][1];
+
+        x11.innerText = height[String(y8[2][0])];
+        x12.innerText = y8[2][0];
+        x13.innerText = y8[2][1];
+    }
+}
+
+</script>
+
+
+
+{% endblock javascripts %}

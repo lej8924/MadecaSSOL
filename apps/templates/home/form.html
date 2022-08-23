@@ -1,0 +1,155 @@
+{% extends "layouts/base-home.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<head>
+<style>
+
+    .btn5{
+    
+ 
+
+        all:unset;
+        font-family:Helvetica,Arial,sans-serif;
+        display:inline-block;
+        max-width:100%;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        background-color:#5CD6C8;
+        color:#000000;
+        font-size:20px;
+        border-radius:25px;
+        padding:0 33px;
+        font-weight:bold;
+        height:50px;
+        cursor:pointer;
+        line-height:50px;
+        text-align:center;
+        margin-left:40%;
+        margin-top: 15%;
+        text-decoration:none;
+      }
+    
+</style>
+</head>
+<div class="pcoded-main-container">
+    <div id="formMain" class="pcoded-wrapper">
+        <iframe src="form_root.html" title="내용" width="1250px" height="700px" scrolling="yes"></iframe>  
+    </div>
+</div>
+
+
+
+
+{% endblock content %}
+
+{% block javascripts %}
+
+<script src="//embed.typeform.com/next/embed.js"></script>
+<!-- 
+<script
+    src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> -->
+<!-- <script>
+
+    $(document).ready(function() {
+            $.ajax({
+                url : "form_root.html",
+                success : function(result) {
+                    $('#formMain').html(result);
+                }
+            });
+        });
+</script> -->
+<script>
+    window.onload=function(){
+        const div = document.getElementById('select_region');
+        
+        div.remove();
+      }
+
+        function submit(event) {
+            console.log(event.response_id);
+            var settings = {
+                "url": "https://v1.nocodeapi.com/gashigochibul/typeform/JUWInxVQHhBztCnf/formResponses?formId=F5aGbcWp",
+                "method": "get",
+                "timeout": 0,
+                "data" : {"included_response_ids":event.response_id},
+                "headers": {
+                    "Content-Type": "application/json"
+                },
+            };
+        
+            $.ajax(settings).done(function (response) {
+                console.log(response);
+            });
+          }
+
+    
+    // var settings = {
+    //     "url": "https://v1.nocodeapi.com/gashigochibul/typeform/JUWInxVQHhBztCnf/formResponses?formId=F5aGbcWp",
+    //     "method": "get",
+    //     "timeout": 0,
+        
+    //     "headers": {
+    //         "Content-Type": "application/json"
+    //     },
+    // };
+
+    // $.ajax(settings).done(function (response) {
+    //     console.log(response);
+    //     // $.ajax({
+    //     // type: 'POST',
+    //     // url: 'send_email',
+    //     // async: false,
+    //     // dataType: 'json',
+    //     // contentType: 'application/json',
+    //     // data: JSON.stringify(settings),
+    //     // success: function(response) {
+    //     //     alert('test!')
+    //     // }})
+  
+    // });
+
+    // var divtest = iframeobj.contentDocument.document.getElementsByClassName('ButtonWrapper-sc-__sc-1qu8p4z-0 eVWele')[0];
+    // divtest.addEventListener('click', function(event){
+    //     alert('Hello world');
+    //     $.ajax({
+    //     type: 'POST',
+    //     url: 'send_email',
+    //     async: false,
+    //     dataType: 'json',
+    //     contentType: 'application/json',
+    //     data: JSON.stringify(settings),
+    //     success: function(response) {
+    //         alert('test!');
+    //     }})
+    // });
+    // var iframeEle = $("iframe");
+    // var framebody = iframeEle.contentWindow.document.body;
+
+    // var submit_button = document.getElementsByClassName('ButtonWrapper-sc-__sc-1qu8p4z-0 eVWele')[0];
+    // submit_button.addEventListener('click', function(event){
+    //     alert('Hello world');
+    //     $.ajax({
+    //     type: 'POST',
+    //     url: 'send_email',
+    //     async: false,
+    //     dataType: 'json',
+    //     contentType: 'application/json',
+    //     data: JSON.stringify(settings),
+    //     success: function(response) {
+    //         alert('test!');
+    //     }})
+    // });
+
+</script>
+
+    
+{% endblock javascripts %}
+
+<!-- Specific Page JS goes HERE  -->
